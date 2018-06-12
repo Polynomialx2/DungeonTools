@@ -1,10 +1,14 @@
 ﻿using System;
 namespace DungeonMaster.Helpers
 {
-    public class DungeonMasterConstants
+    public static class DungeonMasterConstants
     {
-        public DungeonMasterConstants()
-        {
-        }
+        // Abilities
+        public static string STRENGTH = "Strength";
+        public static string DEXTERITY = "Dexterity";
+        public static string CONSTITUTION = "Constitution";
+        public static string INTELLIGENCE = "Intelligence";
+        public static string WISDOM = "Wisdom";
+        public static string CHARISMA = "Charisma";
     }
 }
