@@ -85,6 +85,7 @@
     <Compile Include="Models\Creature.cs" />
     <Compile Include="Models\Monster.cs" />
     <Compile Include="Helpers\RollDice.cs" />
+    <Compile Include="Models\Encounter.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

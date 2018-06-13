@@ -35,6 +35,7 @@
     <Compile Include="Models\CharacterTests.cs" />
     <Compile Include="Models\MonsterTests.cs" />
     <Compile Include="Helpers\RollDiceTests.cs" />
+    <Compile Include="Models\EncounterTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
