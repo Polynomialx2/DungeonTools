@@ -63,5 +63,20 @@ namespace DungeonMasterTests.Helpers
                 Assert.IsTrue(i >= 1 && i <= 4);
             }
         }
+
+        [Test()]
+        public void ValidateDiceString_ShouldValidateGoodStrings() {
+            Assert.IsTrue(RollDice.ValidateDiceString("1d6"));
+            Assert.IsTrue(RollDice.ValidateDiceString("10d12+25"));
+            Assert.IsTrue(RollDice.ValidateDiceString("2d8-6"));
+        }
+
+        [Test()]
+        public void ValidateDiceString_ShouldNotValidateBadStrings() {
+            Assert.IsFalse(RollDice.ValidateDiceString("0d8"));
+            Assert.IsFalse(RollDice.ValidateDiceString("1a8"));
+            Assert.IsFalse(RollDice.ValidateDiceString("2d10a3"));
+            Assert.IsFalse(RollDice.ValidateDiceString(""));
+        }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 
 namespace DungeonMaster.Helpers
 {
@@ -150,6 +151,12 @@ namespace DungeonMaster.Helpers
                 throw;
             }
             return number;
+        }
+
+        public static bool ValidateDiceString(string diceString)
+        {
+            Regex regex = new Regex("^[1-9]\\d*(d|D)(((?=[1-9])\\d*$)|((?=[1-9])\\d*(\\+|-)(?=[1-9])\\d*$))");
+            return regex.IsMatch(diceString);
         }
     }
 
