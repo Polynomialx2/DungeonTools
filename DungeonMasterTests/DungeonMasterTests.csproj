@@ -33,6 +33,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\CharacterTests.cs" />
+    <Compile Include="Models\MonsterTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
