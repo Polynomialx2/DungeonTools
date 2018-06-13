@@ -1,7 +1,7 @@
 ﻿using System;
 namespace DungeonMaster.Models
 {
-    public abstract class Character
+    public abstract class Creature
     {
         private int _initiativeModifier;
         private string _name;

@@ -3,7 +3,7 @@ using DungeonMaster.Helpers;
 
 namespace DungeonMaster.Models
 {
-    public class Monster : Character
+    public class Monster : Creature
     {
         private string _hitDice = String.Empty;
         private int _hitPoints = 0;

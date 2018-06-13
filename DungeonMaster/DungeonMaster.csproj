@@ -82,7 +82,7 @@
     </Compile>
     <Compile Include="Models\PlayerCharacter.cs" />
     <Compile Include="Helpers\DungeonMasterConstants.cs" />
-    <Compile Include="Models\Character.cs" />
+    <Compile Include="Models\Creature.cs" />
     <Compile Include="Models\Monster.cs" />
     <Compile Include="Helpers\RollDice.cs" />
   </ItemGroup>

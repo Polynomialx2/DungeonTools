@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DungeonMaster.Models
 {
-    public class PlayerCharacter : Character
+    public class PlayerCharacter : Creature
     {
         private string _playerName;
 
