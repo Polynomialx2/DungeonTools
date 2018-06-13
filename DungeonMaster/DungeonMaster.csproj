@@ -84,6 +84,7 @@
     <Compile Include="Helpers\DungeonMasterConstants.cs" />
     <Compile Include="Models\Character.cs" />
     <Compile Include="Models\Monster.cs" />
+    <Compile Include="Helpers\RollDice.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

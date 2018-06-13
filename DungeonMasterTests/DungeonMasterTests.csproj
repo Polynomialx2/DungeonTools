@@ -34,12 +34,14 @@
   <ItemGroup>
     <Compile Include="Models\CharacterTests.cs" />
     <Compile Include="Models\MonsterTests.cs" />
+    <Compile Include="Helpers\RollDiceTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DungeonMaster\DungeonMaster.csproj">
