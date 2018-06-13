@@ -1,4 +1,6 @@
 ﻿using System;
+using DungeonMaster.Helpers;
+
 namespace DungeonMaster.Models
 {
     public class Monster : Character
@@ -14,7 +16,7 @@ namespace DungeonMaster.Models
          */
 
         public void rollInitiative() {
-            base.Initiative = InitiativeModifier;
+            base.Initiative = RollDice.Roll("1d20") + InitiativeModifier;
         }
     }
 }

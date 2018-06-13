@@ -12,7 +12,7 @@ namespace DungeonMasterTests.Models
         {
             var beholder = new Monster("Beholder", 6);
             beholder.rollInitiative();
-            Assert.AreNotEqual(beholder.Initiative, null);
+            Assert.IsTrue(beholder.Initiative >= 7 && beholder.Initiative <= 26);
         }
     }
 }
