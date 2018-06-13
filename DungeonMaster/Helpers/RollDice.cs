@@ -10,12 +10,22 @@ namespace DungeonMaster.Helpers
         private static int diceType;
         private static int modifier = 0;
 
+        /*
+         * Returns the result of rolling the given dice string
+         * 
+         * dice: The dice string in format xdy+z
+         */
+
         public static int Roll(string dice)
         {
             ParseDiceString(dice);
             return CalculateDiceValue();
 
         }
+
+        /*
+         * Calculates the value of the dice roll
+         */
 
         private static int CalculateDiceValue()
         {
@@ -27,11 +37,21 @@ namespace DungeonMaster.Helpers
             return value + modifier;
         }
 
+        /**
+         * Parses the dice string and sets member variables
+         */
+
         private static void ParseDiceString(string diceString) {
             numberOfDice = GetNumberOfDice(diceString.ToLower());
             SetDiceType(diceString.ToLower());
             SetModifier(diceString.ToLower());
         }
+
+        /**
+         * Sets the modifier value
+         * 
+         * diceString: The dice string in format xdy+z
+         */
 
         private static void SetModifier(string diceString)
         {
@@ -52,6 +72,12 @@ namespace DungeonMaster.Helpers
             }
             modifier = value;
         }
+
+        /**
+         * Sets the dice type
+         * 
+         * diceString: the dice string in format xdy+z
+         */
 
         private static void SetDiceType(string diceString)
         {
@@ -77,6 +103,12 @@ namespace DungeonMaster.Helpers
             }
         }
 
+        /**
+         * Gets the starting index for the modifier value
+         * 
+         * diceString: the dice string in format xdy+z
+         */
+
         private static int GetModifierStartingLocation(string diceString)
         {
             var location = diceString.IndexOf('+');
@@ -90,6 +122,12 @@ namespace DungeonMaster.Helpers
             }
             return location;
         }
+
+        /**
+         * Gets the number of dice specified in the dice string
+         * 
+         * diceString: the dice string in format xdy+z
+         */
 
         private static int GetNumberOfDice(string diceString)
         {

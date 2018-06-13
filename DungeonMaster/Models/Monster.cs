@@ -9,6 +9,10 @@ namespace DungeonMaster.Models
             base.InitiativeModifier = initiativeModifier;
         }
 
+        /**
+         * Rolls initiative for the monster
+         */
+
         public void rollInitiative() {
             base.Initiative = InitiativeModifier;
         }
