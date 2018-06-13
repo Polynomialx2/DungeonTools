@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using System;
+using DungeonMaster.Models;
 
 namespace DungeonMasterTests.Models
 {
@@ -9,7 +10,7 @@ namespace DungeonMasterTests.Models
         [Test()]
         public void CanMakeNewCharacter()
         {
-            Character character = new Character();
+            PlayerCharacter character = new PlayerCharacter("Kresh", 9, "Jason");
         }
     }
 }

@@ -4,11 +4,11 @@ namespace DungeonMaster.Helpers
     public static class DungeonMasterConstants
     {
         // Abilities
-        public static string STRENGTH = "Strength";
-        public static string DEXTERITY = "Dexterity";
-        public static string CONSTITUTION = "Constitution";
-        public static string INTELLIGENCE = "Intelligence";
-        public static string WISDOM = "Wisdom";
-        public static string CHARISMA = "Charisma";
+        public static readonly string STRENGTH = "Strength";
+        public static readonly string DEXTERITY = "Dexterity";
+        public static readonly string CONSTITUTION = "Constitution";
+        public static readonly string INTELLIGENCE = "Intelligence";
+        public static readonly string WISDOM = "Wisdom";
+        public static readonly string CHARISMA = "Charisma";
     }
 }
