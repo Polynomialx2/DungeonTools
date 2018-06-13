@@ -11,7 +11,7 @@ namespace DungeonMasterTests.Models
         public void CanRollInitiativeForMonster()
         {
             var beholder = new Monster("Beholder", 6);
-            beholder.rollInitiative();
+            beholder.RollInitiative();
             Assert.IsTrue(beholder.Initiative >= 7 && beholder.Initiative <= 26);
         }
     }

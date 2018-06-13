@@ -15,8 +15,8 @@ namespace DungeonMaster.Models
          * Rolls initiative for the monster
          */
 
-        public void rollInitiative() {
-            base.Initiative = RollDice.Roll("1d20") + InitiativeModifier;
+        public void RollInitiative() {
+            base.Initiative = RollDice.Roll(DungeonMasterConstants.D20) + InitiativeModifier;
         }
     }
 }
