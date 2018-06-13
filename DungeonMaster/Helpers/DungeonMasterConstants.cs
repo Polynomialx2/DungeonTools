@@ -19,5 +19,8 @@ namespace DungeonMaster.Helpers
         public static readonly string D12 = "d12";
         public static readonly string D20 = "d20";
         public static readonly string D100 = "d100";
+
+        // Regex
+        public static readonly string REGEX_VALIDATE_DICE_STRING = "^[1-9]\\d*(d|D)(((?=[1-9])\\d*$)|((?=[1-9])\\d*(\\+|-)(?=[1-9])\\d*$))";
     }
 }

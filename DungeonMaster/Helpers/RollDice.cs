@@ -155,8 +155,7 @@ namespace DungeonMaster.Helpers
 
         public static bool ValidateDiceString(string diceString)
         {
-            Regex regex = new Regex("^[1-9]\\d*(d|D)(((?=[1-9])\\d*$)|((?=[1-9])\\d*(\\+|-)(?=[1-9])\\d*$))");
-            return regex.IsMatch(diceString);
+            return new Regex(DungeonMasterConstants.REGEX_VALIDATE_DICE_STRING).IsMatch(diceString);
         }
     }
 
