@@ -7,10 +7,6 @@ namespace DungeonMaster.Helpers
 {
     public static class RollDice
     {
-        private static int numberOfDice;
-        private static int diceType;
-        private static int modifier = 0;
-
         /*
          * Returns the result of rolling the given dice string
          * 
@@ -19,16 +15,30 @@ namespace DungeonMaster.Helpers
 
         public static int Roll(string dice)
         {
-            ParseDiceString(dice);
-            return CalculateDiceValue();
+            dice = dice.ToLower();
+            if (ValidateDiceString(dice))
+            {
+                int numberOfDice = GetNumberOfDice(dice);
+                int diceType = GetDiceType(dice);
+                int modifier = GetModifier(dice);
+                return CalculateDiceValue(numberOfDice, diceType, modifier);
+            }
+            else
+            {
+                throw new InvalidRollException($"Invalid dice roll: {dice}");
+            }
+        }
 
+        public static bool ValidateDiceString(string diceString)
+        {
+            return new Regex(DungeonMasterConstants.REGEX_VALIDATE_DICE_STRING).IsMatch(diceString);
         }
 
         /*
          * Calculates the value of the dice roll
          */
 
-        private static int CalculateDiceValue()
+        private static int CalculateDiceValue(int numberOfDice, int diceType, int modifier)
         {
             int value = 0;
             Random random = new Random();
@@ -39,31 +49,20 @@ namespace DungeonMaster.Helpers
         }
 
         /**
-         * Parses the dice string and sets member variables
-         */
-
-        private static void ParseDiceString(string diceString) {
-            numberOfDice = GetNumberOfDice(diceString.ToLower());
-            SetDiceType(diceString.ToLower());
-            SetModifier(diceString.ToLower());
-        }
-
-        /**
          * Sets the modifier value
          * 
          * diceString: The dice string in format xdy+z
          */
 
-        private static void SetModifier(string diceString)
+        private static int GetModifier(string diceString)
         {
+            Regex regex = new Regex(DungeonMasterConstants.REGEX_MODIFIER);
             int value = 0;
-            int startPos = GetModifierStartingLocation(diceString);
-            if (startPos != diceString.Length) 
-            {
-                try
-                {
-                    value = Convert.ToInt32(diceString.Substring(startPos, diceString.Length - startPos));
-                } 
+            string diceModifier = regex.Match(diceString).Value;
+            if (diceModifier != String.Empty) {
+                try {
+                    value = Convert.ToInt32(diceModifier);
+                }
                 catch (Exception ex)
                 {
                     if (ex is FormatException || ex is ArgumentNullException || ex is OverflowException)
@@ -71,7 +70,7 @@ namespace DungeonMaster.Helpers
                     throw;
                 }
             }
-            modifier = value;
+            return value;
         }
 
         /**
@@ -80,21 +79,13 @@ namespace DungeonMaster.Helpers
          * diceString: the dice string in format xdy+z
          */
 
-        private static void SetDiceType(string diceString)
+        private static int GetDiceType(string diceString)
         {
-            int startPos = diceString.IndexOf('d');
-            if (startPos == -1)
-            {
-                throw new InvalidRollException($"Invalid dice roll: {diceString}");
-            }
-            else
-            {
-                startPos += 1;
-            }
-            try
-            {
-                int endingPos = GetModifierStartingLocation(diceString);
-                diceType = Convert.ToInt32(diceString.Substring(startPos, endingPos - startPos));
+            Regex regex = new Regex(DungeonMasterConstants.REGEX_DICE_TYPE);
+            int diceType;
+            try {
+                diceType = Convert.ToInt32(regex.Match(diceString).Value);
+                return diceType;
             }
             catch (Exception ex)
             {
@@ -105,26 +96,6 @@ namespace DungeonMaster.Helpers
         }
 
         /**
-         * Gets the starting index for the modifier value
-         * 
-         * diceString: the dice string in format xdy+z
-         */
-
-        private static int GetModifierStartingLocation(string diceString)
-        {
-            int location = diceString.IndexOf('+');
-            if (location == -1) 
-            {
-                location = diceString.IndexOf('-');
-                if (location == -1) 
-                {
-                    location = diceString.Length;
-                }
-            }
-            return location;
-        }
-
-        /**
          * Gets the number of dice specified in the dice string
          * 
          * diceString: the dice string in format xdy+z
@@ -132,19 +103,12 @@ namespace DungeonMaster.Helpers
 
         private static int GetNumberOfDice(string diceString)
         {
-            int number = 1;
-            int endingPos = diceString.IndexOf('d');
-            if (endingPos == -1)
+            Regex regex = new Regex(DungeonMasterConstants.REGEX_NUMBER_OF_DICE);
+            int number;
+            try
             {
-                throw new InvalidRollException($"Invalid dice roll: {diceString}");
-            }
-            try 
-            {
-                if (endingPos != 0)
-                {
-                    number = Convert.ToInt32(diceString.Substring(0, endingPos));
-                }
-            } catch(Exception ex) 
+                number = Convert.ToInt32(regex.Match(diceString).Value);
+            } catch (Exception ex)
             {
                 if (ex is FormatException || ex is ArgumentNullException || ex is OverflowException)
                     throw new InvalidRollException($"Invalid dice roll: {diceString}", ex);
@@ -152,30 +116,17 @@ namespace DungeonMaster.Helpers
             }
             return number;
         }
-
-        public static bool ValidateDiceString(string diceString)
-        {
-            return new Regex(DungeonMasterConstants.REGEX_VALIDATE_DICE_STRING).IsMatch(diceString);
-        }
     }
 
     [Serializable]
     public class InvalidRollException : Exception
     {
-        public InvalidRollException()
-        {
-        }
+        public InvalidRollException() {}
 
-        public InvalidRollException(string message) : base(message)
-        {
-        }
+        public InvalidRollException(string message) : base(message) {}
 
-        public InvalidRollException(string message, Exception innerException) : base(message, innerException)
-        {
-        }
+        public InvalidRollException(string message, Exception innerException) : base(message, innerException) {}
 
-        protected InvalidRollException(SerializationInfo info, StreamingContext context) : base(info, context)
-        {
-        }
+        protected InvalidRollException(SerializationInfo info, StreamingContext context) : base(info, context) {}
     }
 }

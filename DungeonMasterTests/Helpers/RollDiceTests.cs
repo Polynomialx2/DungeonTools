@@ -40,12 +40,6 @@ namespace DungeonMasterTests.Helpers
         }
 
         [Test()]
-        public void RollAValidDiceStringWithoutNumberOfDice() {
-            var rollValue = RollDice.Roll("d4+1");
-            Assert.IsTrue(rollValue >= 2 && rollValue <= 5);
-        }
-
-        [Test()]
         public void RollAValidDiceStringWithoutModifier() {
             var rollValue = RollDice.Roll("1d20");
             Assert.IsTrue(rollValue >= 1 && rollValue <= 20);
