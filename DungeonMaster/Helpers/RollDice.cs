@@ -29,7 +29,7 @@ namespace DungeonMaster.Helpers
 
         private static int CalculateDiceValue()
         {
-            var value = 0;
+            int value = 0;
             Random random = new Random();
             for (int i = 0; i < numberOfDice; i++) {
                 value += random.Next(1, diceType);
@@ -55,8 +55,8 @@ namespace DungeonMaster.Helpers
 
         private static void SetModifier(string diceString)
         {
-            var value = 0;
-            var startPos = GetModifierStartingLocation(diceString);
+            int value = 0;
+            int startPos = GetModifierStartingLocation(diceString);
             if (startPos != diceString.Length) 
             {
                 try
@@ -81,7 +81,7 @@ namespace DungeonMaster.Helpers
 
         private static void SetDiceType(string diceString)
         {
-            var startPos = diceString.IndexOf('d');
+            int startPos = diceString.IndexOf('d');
             if (startPos == -1)
             {
                 throw new InvalidRollException($"Invalid dice roll: {diceString}");
@@ -111,7 +111,7 @@ namespace DungeonMaster.Helpers
 
         private static int GetModifierStartingLocation(string diceString)
         {
-            var location = diceString.IndexOf('+');
+            int location = diceString.IndexOf('+');
             if (location == -1) 
             {
                 location = diceString.IndexOf('-');
@@ -131,8 +131,8 @@ namespace DungeonMaster.Helpers
 
         private static int GetNumberOfDice(string diceString)
         {
-            var number = 1;
-            var endingPos = diceString.IndexOf('d');
+            int number = 1;
+            int endingPos = diceString.IndexOf('d');
             if (endingPos == -1)
             {
                 throw new InvalidRollException($"Invalid dice roll: {diceString}");
