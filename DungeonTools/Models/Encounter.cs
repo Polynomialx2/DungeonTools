@@ -16,7 +16,7 @@ namespace DungeonTools.Models
 
         public List<PlayerCharacter> Party { get => _party; }
         public List<Monster> Monsters { get => _monsters; set => _monsters = value; }
-        public List<Creature> InitiativeOrder { get => _initiativeOrder; }
+        public List<Creature> InitiativeOrder { get => _initiativeOrder; set => _initiativeOrder = value; }
 
         /*
          * Adds player character to the party
@@ -56,7 +56,7 @@ namespace DungeonTools.Models
                 initiativeOrder.Add(character);
             }
             // Sorts by initiative
-            _initiativeOrder = initiativeOrder.OrderBy(cw => cw.Initiative).ToList();
+            InitiativeOrder = initiativeOrder.OrderBy(cw => cw.Initiative).ToList();
         }
     }
 }
