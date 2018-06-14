@@ -1,6 +1,7 @@
 ﻿using NUnit.Framework;
 using System;
 using DungeonTools.Models;
+using System.Collections.Generic;
 
 namespace DungeonToolsTests.Models
 {
@@ -47,15 +48,26 @@ namespace DungeonToolsTests.Models
 
         [Test()]
         public void CanStartEncounter() {
-            Encounter encounter = setUpEncounter();
+            Encounter encounter = setUpGoodEncounter();
             encounter.start();
             Assert.IsTrue(encounter.InitiativeOrder.Count != 0);
         }
 
-        private Encounter setUpEncounter() {
+        [Test()]
+        public void StartingEncounterPutsInitiativeInCorrectOrder() {
+            Encounter encounter = setUpGoodEncounter();
+            encounter.start();
+            int initiative = 0;
+            foreach (Creature c in encounter.InitiativeOrder) {
+                Assert.IsTrue(c.Initiative >= initiative);
+                initiative = c.Initiative;
+            }
+        }
+
+        private Encounter setUpGoodEncounter() {
             Encounter encounter = new Encounter();
-            encounter.addPC(new PlayerCharacter("Kresh", 10, "Jason"));
             encounter.addPC(new PlayerCharacter("Gerald", 11, "Brian"));
+            encounter.addPC(new PlayerCharacter("Kresh", 10, "Jason"));
             encounter.addMonster(new Monster("Beholder", 6));
             return encounter;
         }
