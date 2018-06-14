@@ -14,5 +14,13 @@ namespace DungeonToolsTests.Models
             beholder.RollInitiative();
             Assert.IsTrue(beholder.Initiative >= 7 && beholder.Initiative <= 26);
         }
+
+        [Test()]
+        public void CanRollHitPointsForMonster() {
+            Monster beholder = new Monster("Beholder", 6);
+            beholder.HitDice = "11d8+44";
+            beholder.RollHitPoints();
+            Assert.IsTrue(beholder.HitPoints > 0);
+        }
     }
 }
