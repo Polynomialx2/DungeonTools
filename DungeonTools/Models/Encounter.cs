@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DungeonTools.Helpers;
 
 namespace DungeonTools.Models
 {
@@ -43,6 +42,7 @@ namespace DungeonTools.Models
             List<Creature> initiativeOrder = new List<Creature>();
             foreach (Monster monster in Monsters) {
                 monster.RollInitiative();
+                monster.RollHitPoints();
                 initiativeOrder.Add(monster);
             }
             foreach (PlayerCharacter character in Party) {
