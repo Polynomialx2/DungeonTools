@@ -64,11 +64,22 @@ namespace DungeonToolsTests.Models
             }
         }
 
+        [Test()]
+        public void StartingEncounterAddsHitPointsToMonsters() {
+            Encounter encounter = setUpGoodEncounter();
+            encounter.start();
+            foreach (Monster monster in encounter.Monsters) {
+                Assert.IsTrue(monster.HitPoints > 0);
+            }
+        }
+
         private Encounter setUpGoodEncounter() {
             Encounter encounter = new Encounter();
             encounter.addPC(new PlayerCharacter("Gerald", 11, "Brian"));
             encounter.addPC(new PlayerCharacter("Kresh", 10, "Jason"));
-            encounter.addMonster(new Monster("Beholder", 6));
+            Monster beholder = new Monster("Beholder", 6);
+            beholder.HitDice = "11d8+44";
+            encounter.addMonster(beholder);
             return encounter;
         }
     }

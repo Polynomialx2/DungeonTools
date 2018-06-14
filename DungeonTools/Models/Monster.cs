@@ -27,12 +27,20 @@ namespace DungeonTools.Models
             base.InitiativeModifier = initiativeModifier;
         }
 
-        /**
+        /*
          * Rolls initiative for the monster
          */
 
         public void RollInitiative() {
             base.Initiative = RollDice.Roll(DungeonToolsConstants.D20) + InitiativeModifier;
+        }
+
+        /*
+         * Rolls hit points for the monster
+         */
+
+        public void RollHitPoints() {
+            HitPoints = RollDice.Roll(HitDice);
         }
     }
 }
