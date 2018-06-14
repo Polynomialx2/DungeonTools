@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using DungeonTools.Helpers;
 
 namespace DungeonTools.Models
@@ -39,16 +40,16 @@ namespace DungeonTools.Models
         }
 
         public void start() {
-            InitiativeOrder.Clear();
+            List<Creature> initiativeOrder = new List<Creature>();
             foreach (Monster monster in Monsters) {
                 monster.RollInitiative();
-                InitiativeOrder.Add(monster);
+                initiativeOrder.Add(monster);
             }
             foreach (PlayerCharacter character in Party) {
-                InitiativeOrder.Add(character);
+                initiativeOrder.Add(character);
             }
             // Sorts by initiative
-            InitiativeOrder.Sort();
+            _initiativeOrder = initiativeOrder.OrderBy(cw => cw.Initiative).ToList();
         }
     }
 }
