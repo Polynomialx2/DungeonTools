@@ -8,12 +8,17 @@ namespace DungeonTools.Models
         private string _hitDice = String.Empty;
         private int _hitPoints = 0;
 
-        public string HitDice { 
+        public string HitDice
+        {
             get => _hitDice;
-            set {
-                if (RollDice.ValidateDiceString(value)) {
+            set
+            {
+                if (RollDice.ValidateDiceString(value))
+                {
                     _hitDice = value;
-                } else {
+                }
+                else
+                {
                     _hitDice = String.Empty;
                     throw new InvalidRollException($"Invalid dice format: {value}");
                 }
@@ -31,7 +36,8 @@ namespace DungeonTools.Models
          * Rolls initiative for the monster
          */
 
-        public void RollInitiative() {
+        public void RollInitiative()
+        {
             base.Initiative = RollDice.Roll(DungeonToolsConstants.D20) + InitiativeModifier;
         }
 
@@ -39,7 +45,8 @@ namespace DungeonTools.Models
          * Rolls hit points for the monster
          */
 
-        public void RollHitPoints() {
+        public void RollHitPoints()
+        {
             HitPoints = RollDice.Roll(HitDice);
         }
     }

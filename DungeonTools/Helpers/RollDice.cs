@@ -41,7 +41,8 @@ namespace DungeonTools.Helpers
         {
             int value = 0;
             Random random = new Random();
-            for (int i = 0; i < numberOfDice; i++) {
+            for (int i = 0; i < numberOfDice; i++)
+            {
                 value += random.Next(1, diceType);
             }
             return value + modifier;
@@ -58,8 +59,10 @@ namespace DungeonTools.Helpers
             Regex regex = new Regex(DungeonToolsConstants.REGEX_MODIFIER);
             int value = 0;
             string diceModifier = regex.Match(diceString).Value;
-            if (diceModifier != String.Empty) {
-                try {
+            if (diceModifier != String.Empty)
+            {
+                try
+                {
                     value = Convert.ToInt32(diceModifier);
                 }
                 catch (Exception ex)
@@ -82,7 +85,8 @@ namespace DungeonTools.Helpers
         {
             Regex regex = new Regex(DungeonToolsConstants.REGEX_DICE_TYPE);
             int diceType;
-            try {
+            try
+            {
                 diceType = Convert.ToInt32(regex.Match(diceString).Value);
                 return diceType;
             }
@@ -107,7 +111,8 @@ namespace DungeonTools.Helpers
             try
             {
                 number = Convert.ToInt32(regex.Match(diceString).Value);
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
                 if (ex is FormatException || ex is ArgumentNullException || ex is OverflowException)
                     throw new InvalidRollException($"Invalid dice roll: {diceString}", ex);
@@ -120,12 +125,12 @@ namespace DungeonTools.Helpers
     [Serializable]
     public class InvalidRollException : Exception
     {
-        public InvalidRollException() {}
+        public InvalidRollException() { }
 
-        public InvalidRollException(string message) : base(message) {}
+        public InvalidRollException(string message) : base(message) { }
 
-        public InvalidRollException(string message, Exception innerException) : base(message, innerException) {}
+        public InvalidRollException(string message, Exception innerException) : base(message, innerException) { }
 
-        protected InvalidRollException(SerializationInfo info, StreamingContext context) : base(info, context) {}
+        protected InvalidRollException(SerializationInfo info, StreamingContext context) : base(info, context) { }
     }
 }

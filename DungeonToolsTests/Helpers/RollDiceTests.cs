@@ -40,33 +40,37 @@ namespace DungeonToolsTests.Helpers
         }
 
         [Test()]
-        public void RollAValidDiceStringWithoutModifier() {
+        public void RollAValidDiceStringWithoutModifier()
+        {
             var rollValue = RollDice.Roll("1d20");
             Assert.IsTrue(rollValue >= 1 && rollValue <= 20);
         }
 
         [Test()]
-        public void RollManyTimesAndVerifyRange() {
+        public void RollManyTimesAndVerifyRange()
+        {
             List<int> rolls = new List<int>();
             for (int i = 0; i < 40; i++)
             {
                 rolls.Add(RollDice.Roll("1d4"));
             }
-            foreach (int i in rolls) 
+            foreach (int i in rolls)
             {
                 Assert.IsTrue(i >= 1 && i <= 4);
             }
         }
 
         [Test()]
-        public void ValidateDiceString_ShouldValidateGoodStrings() {
+        public void ValidateDiceString_ShouldValidateGoodStrings()
+        {
             Assert.IsTrue(RollDice.ValidateDiceString("1d6"));
             Assert.IsTrue(RollDice.ValidateDiceString("10d12+25"));
             Assert.IsTrue(RollDice.ValidateDiceString("2d8-6"));
         }
 
         [Test()]
-        public void ValidateDiceString_ShouldNotValidateBadStrings() {
+        public void ValidateDiceString_ShouldNotValidateBadStrings()
+        {
             Assert.IsFalse(RollDice.ValidateDiceString("0d8"));
             Assert.IsFalse(RollDice.ValidateDiceString("1a8"));
             Assert.IsFalse(RollDice.ValidateDiceString("2d10a3"));
