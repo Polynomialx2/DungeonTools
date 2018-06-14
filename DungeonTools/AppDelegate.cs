@@ -1,7 +1,7 @@
 ﻿using AppKit;
 using Foundation;
 
-namespace DungeonMaster
+namespace DungeonTools
 {
     [Register("AppDelegate")]
     public class AppDelegate : NSApplicationDelegate

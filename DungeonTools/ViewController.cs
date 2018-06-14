@@ -3,7 +3,7 @@
 using AppKit;
 using Foundation;
 
-namespace DungeonMaster
+namespace DungeonTools
 {
     public partial class ViewController : NSViewController
     {

@@ -1,7 +1,7 @@
 ﻿using System;
-namespace DungeonMaster.Helpers
+namespace DungeonTools.Helpers
 {
-    public static class DungeonMasterConstants
+    public static class DungeonToolsConstants
     {
         // Abilities
         public static readonly string STRENGTH = "Strength";

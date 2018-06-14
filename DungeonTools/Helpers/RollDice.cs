@@ -2,7 +2,7 @@
 using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
 
-namespace DungeonMaster.Helpers
+namespace DungeonTools.Helpers
 {
     public static class RollDice
     {
@@ -30,7 +30,7 @@ namespace DungeonMaster.Helpers
 
         public static bool ValidateDiceString(string diceString)
         {
-            return new Regex(DungeonMasterConstants.REGEX_VALIDATE_DICE_STRING).IsMatch(diceString);
+            return new Regex(DungeonToolsConstants.REGEX_VALIDATE_DICE_STRING).IsMatch(diceString);
         }
 
         /*
@@ -55,7 +55,7 @@ namespace DungeonMaster.Helpers
 
         private static int GetModifier(string diceString)
         {
-            Regex regex = new Regex(DungeonMasterConstants.REGEX_MODIFIER);
+            Regex regex = new Regex(DungeonToolsConstants.REGEX_MODIFIER);
             int value = 0;
             string diceModifier = regex.Match(diceString).Value;
             if (diceModifier != String.Empty) {
@@ -80,7 +80,7 @@ namespace DungeonMaster.Helpers
 
         private static int GetDiceType(string diceString)
         {
-            Regex regex = new Regex(DungeonMasterConstants.REGEX_DICE_TYPE);
+            Regex regex = new Regex(DungeonToolsConstants.REGEX_DICE_TYPE);
             int diceType;
             try {
                 diceType = Convert.ToInt32(regex.Match(diceString).Value);
@@ -102,7 +102,7 @@ namespace DungeonMaster.Helpers
 
         private static int GetNumberOfDice(string diceString)
         {
-            Regex regex = new Regex(DungeonMasterConstants.REGEX_NUMBER_OF_DICE);
+            Regex regex = new Regex(DungeonToolsConstants.REGEX_NUMBER_OF_DICE);
             int number;
             try
             {

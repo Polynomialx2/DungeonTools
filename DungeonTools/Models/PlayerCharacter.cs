@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace DungeonMaster.Models
+namespace DungeonTools.Models
 {
     public class PlayerCharacter : Creature
     {

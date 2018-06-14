@@ -1,9 +1,9 @@
 
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonTools", "DungeonMaster\DungeonTools.csproj", "{F4A1C97B-CFFA-465E-A400-4A80C0786622}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonTools", "DungeonTools\DungeonTools.csproj", "{F4A1C97B-CFFA-465E-A400-4A80C0786622}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonToolsTests", "DungeonMasterTests\DungeonToolsTests.csproj", "{06874BC3-7037-44D2-94BD-453024D551ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DungeonToolsTests", "DungeonToolsTests\DungeonToolsTests.csproj", "{06874BC3-7037-44D2-94BD-453024D551ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

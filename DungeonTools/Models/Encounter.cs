@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using DungeonTools.Helpers;
 
-namespace DungeonMaster.Models
+namespace DungeonTools.Models
 {
     public class Encounter
     {
         List<PlayerCharacter> _party = new List<PlayerCharacter>();
         List<Monster> _monsters = new List<Monster>();
-        List<string> _initiativeOrder = new List<string>();
+        List<Creature> _initiativeOrder = new List<Creature>();
 
         public Encounter()
         {
@@ -15,7 +16,7 @@ namespace DungeonMaster.Models
 
         public List<PlayerCharacter> Party { get => _party; }
         public List<Monster> Monsters { get => _monsters; set => _monsters = value; }
-        public List<string> InitiativeOrder { get => _initiativeOrder; }
+        public List<Creature> InitiativeOrder { get => _initiativeOrder; }
 
         /*
          * Adds player character to the party
@@ -38,12 +39,16 @@ namespace DungeonMaster.Models
         }
 
         public void start() {
+            InitiativeOrder.Clear();
+            foreach (Monster monster in Monsters) {
+                monster.RollInitiative();
+                InitiativeOrder.Add(monster);
+            }
             foreach (PlayerCharacter character in Party) {
-                _initiativeOrder.Add(character.Name);
+                InitiativeOrder.Add(character);
             }
-            foreach (Monster monster in _monsters) {
-                _initiativeOrder.Add(monster.Name);
-            }
+            // Sorts by initiative
+            InitiativeOrder.Sort();
         }
     }
 }

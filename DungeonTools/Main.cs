@@ -1,6 +1,6 @@
 ﻿using AppKit;
 
-namespace DungeonMaster
+namespace DungeonTools
 {
     static class MainClass
     {

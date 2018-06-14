@@ -6,7 +6,7 @@
 //
 using Foundation;
 
-namespace DungeonMaster
+namespace DungeonTools
 {
     [Register("ViewController")]
     partial class ViewController

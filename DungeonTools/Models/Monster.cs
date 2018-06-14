@@ -1,7 +1,7 @@
 ﻿using System;
-using DungeonMaster.Helpers;
+using DungeonTools.Helpers;
 
-namespace DungeonMaster.Models
+namespace DungeonTools.Models
 {
     public class Monster : Creature
     {
@@ -32,7 +32,7 @@ namespace DungeonMaster.Models
          */
 
         public void RollInitiative() {
-            base.Initiative = RollDice.Roll(DungeonMasterConstants.D20) + InitiativeModifier;
+            base.Initiative = RollDice.Roll(DungeonToolsConstants.D20) + InitiativeModifier;
         }
     }
 }
