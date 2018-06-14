@@ -15,10 +15,6 @@ namespace DungeonTools.Models
         {
             if (this.Initiative > other.Initiative) return -1;
             if (this.Initiative < other.Initiative) return 1;
-            // If initiative is equal check modifier
-            if (this.InitiativeModifier > other.InitiativeModifier) return -1;
-            if (this.InitiativeModifier < other.InitiativeModifier) return 1;
-            // If modifers are equal then creatures are equal initiative
             return 0;
         }
     }
