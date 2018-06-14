@@ -9,7 +9,8 @@ namespace DungeonToolsTests.Models
     public class EncounterTests
     {
         [Test()]
-        public void CanAddPlayerCharactersToEncounter() {
+        public void CanAddPlayerCharactersToEncounter()
+        {
             Encounter encounter = new Encounter();
             PlayerCharacter kresh = new PlayerCharacter("Kresh", 9, "Jason");
             encounter.addPC(kresh);
@@ -28,7 +29,8 @@ namespace DungeonToolsTests.Models
         }
 
         [Test()]
-        public void CanAddMonstersToEncounter() {
+        public void CanAddMonstersToEncounter()
+        {
             Encounter encounter = new Encounter();
             Monster beholder = new Monster("Beholder", 6);
             encounter.addMonster(beholder);
@@ -47,33 +49,39 @@ namespace DungeonToolsTests.Models
         }
 
         [Test()]
-        public void CanStartEncounter() {
+        public void CanStartEncounter()
+        {
             Encounter encounter = setUpGoodEncounter();
             encounter.start();
             Assert.IsTrue(encounter.InitiativeOrder.Count != 0);
         }
 
         [Test()]
-        public void StartingEncounterPutsInitiativeInCorrectOrder() {
+        public void StartingEncounterPutsInitiativeInCorrectOrder()
+        {
             Encounter encounter = setUpGoodEncounter();
             encounter.start();
             int initiative = 0;
-            foreach (Creature c in encounter.InitiativeOrder) {
+            foreach (Creature c in encounter.InitiativeOrder)
+            {
                 Assert.IsTrue(c.Initiative >= initiative);
                 initiative = c.Initiative;
             }
         }
 
         [Test()]
-        public void StartingEncounterAddsHitPointsToMonsters() {
+        public void StartingEncounterAddsHitPointsToMonsters()
+        {
             Encounter encounter = setUpGoodEncounter();
             encounter.start();
-            foreach (Monster monster in encounter.Monsters) {
+            foreach (Monster monster in encounter.Monsters)
+            {
                 Assert.IsTrue(monster.HitPoints > 0);
             }
         }
 
-        private Encounter setUpGoodEncounter() {
+        private Encounter setUpGoodEncounter()
+        {
             Encounter encounter = new Encounter();
             encounter.addPC(new PlayerCharacter("Gerald", 11, "Brian"));
             encounter.addPC(new PlayerCharacter("Kresh", 10, "Jason"));

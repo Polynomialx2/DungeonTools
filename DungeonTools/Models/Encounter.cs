@@ -22,30 +22,37 @@ namespace DungeonTools.Models
          * Adds player character to the party
          */
 
-        public void addPC(PlayerCharacter character) {
+        public void addPC(PlayerCharacter character)
+        {
             Party.Add(character);
         }
 
-        public void clearParty() {
+        public void clearParty()
+        {
             Party.Clear();
         }
 
-        public void addMonster(Monster monster) {
+        public void addMonster(Monster monster)
+        {
             Monsters.Add(monster);
         }
 
-        public void clearMonsters() {
+        public void clearMonsters()
+        {
             Monsters.Clear();
         }
 
-        public void start() {
+        public void start()
+        {
             List<Creature> initiativeOrder = new List<Creature>();
-            foreach (Monster monster in Monsters) {
+            foreach (Monster monster in Monsters)
+            {
                 monster.RollInitiative();
                 monster.RollHitPoints();
                 initiativeOrder.Add(monster);
             }
-            foreach (PlayerCharacter character in Party) {
+            foreach (PlayerCharacter character in Party)
+            {
                 initiativeOrder.Add(character);
             }
             // Sorts by initiative

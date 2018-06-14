@@ -16,7 +16,8 @@ namespace DungeonToolsTests.Models
         }
 
         [Test()]
-        public void CanRollHitPointsForMonster() {
+        public void CanRollHitPointsForMonster()
+        {
             Monster beholder = new Monster("Beholder", 6);
             beholder.HitDice = "11d8+44";
             beholder.RollHitPoints();
