@@ -661,7 +661,7 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="IUT-jb-rx4" kind="relationship" relationship="window.shadowedContentViewController" id="rMG-FU-h8O"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -669,17 +669,56 @@
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
         <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <scene sceneID="ejf-5X-Zjc">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <tabViewController id="IUT-jb-rx4" customClass="ViewController" sceneMemberID="viewController">
+                    <tabViewItems>
+                        <tabViewItem identifier="" id="2jP-Io-wng"/>
+                        <tabViewItem identifier="" id="m4E-Dz-MUn"/>
+                    </tabViewItems>
+                    <tabView key="tabView" type="noTabsNoBorder" id="RSc-U1-dx3">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <font key="font" metaFont="message"/>
+                        <connections>
+                            <outlet property="delegate" destination="IUT-jb-rx4" id="nFz-jQ-BFU"/>
+                        </connections>
+                    </tabView>
+                    <connections>
+                        <outlet property="tabView" destination="RSc-U1-dx3" id="FID-dr-w4w"/>
+                        <segue destination="rms-68-9V7" kind="relationship" relationship="tabItems" id="Atk-WQ-daE"/>
+                        <segue destination="Hmf-yE-CZw" kind="relationship" relationship="tabItems" id="gIS-XX-iih"/>
+                    </connections>
+                </tabViewController>
+                <customObject id="kqA-eg-Z68" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="678"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="y3Z-na-WYf">
+            <objects>
+                <viewController id="rms-68-9V7" sceneMemberID="viewController">
+                    <view key="view" id="fqz-Ay-5Tk">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="mwd-XD-y18" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="710" y="549"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uHt-EW-6a5">
+            <objects>
+                <viewController id="Hmf-yE-CZw" sceneMemberID="viewController">
+                    <view key="view" id="i4M-dc-fW8">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="8eq-iR-GQW" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="502" y="1137"/>
         </scene>
     </scenes>
 </document>

@@ -5,7 +5,7 @@ using Foundation;
 
 namespace DungeonTools
 {
-    public partial class ViewController : NSViewController
+    public partial class ViewController : NSTabViewController
     {
         public ViewController(IntPtr handle) : base(handle)
         {

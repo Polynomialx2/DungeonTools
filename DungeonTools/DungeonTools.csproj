@@ -70,6 +70,9 @@
     <Folder Include="Resources\" />
     <Folder Include="Models\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Views\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -78,19 +81,20 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
+    <Compile Include="Helpers\DungeonToolsConstants.cs" />
+    <Compile Include="Helpers\RollDice.cs" />
+    <Compile Include="Controllers\ViewController.cs" />
+    <Compile Include="Controllers\ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\PlayerCharacter.cs" />
-    <Compile Include="Helpers\DungeonToolsConstants.cs" />
-    <Compile Include="Models\Creature.cs" />
-    <Compile Include="Models\Monster.cs" />
-    <Compile Include="Helpers\RollDice.cs" />
-    <Compile Include="Models\Encounter.cs" />
+    <Compile Include="Domain\Creature.cs" />
+    <Compile Include="Domain\Encounter.cs" />
+    <Compile Include="Domain\Monster.cs" />
+    <Compile Include="Domain\PlayerCharacter.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="Resources\Controllers\EncounterController.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\.DS_Store" />
