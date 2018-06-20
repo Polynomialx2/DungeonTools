@@ -4,13 +4,32 @@ using System;
 
 using Foundation;
 using AppKit;
+using DungeonTools.Models;
 
 namespace DungeonTools
 {
 	public partial class EncounterController : NSViewController
 	{
+        private Encounter _encounter = new Encounter();
+        CharacterInitiativeListDataSource dataSource = new CharacterInitiativeListDataSource();
+
 		public EncounterController (IntPtr handle) : base (handle)
 		{
 		}
+
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            PartyTable.DataSource = dataSource;
+            PartyTable.Delegate = new CharacterEntriesDelegate(dataSource);
+
+            // Do any additional setup after loading the view.
+        }
+
+        partial void OnRemoveButtonClicked(NSObject sender)
+        {
+            dataSource.CharacterEntries.Add(new CharacterEntry("Kresh", 10));
+            PartyTable.ReloadData();
+        }
 	}
 }

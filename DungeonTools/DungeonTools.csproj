@@ -100,6 +100,9 @@
     <Compile Include="Controllers\EncounterController.designer.cs">
       <DependentUpon>EncounterController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\CharacterEntry.cs" />
+    <Compile Include="Models\CharacterInitiativeListDataSource.cs" />
+    <Compile Include="Models\CharacterEntriesDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

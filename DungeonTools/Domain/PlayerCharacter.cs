@@ -9,6 +9,8 @@ namespace DungeonTools.Models
 
         public string PlayerName { get => _playerName; set => _playerName = value; }
 
+        public PlayerCharacter() {}
+
         public PlayerCharacter(string name, int initiative, string playerName)
         {
             base.Name = name;
