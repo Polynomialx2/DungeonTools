@@ -15,6 +15,9 @@ namespace DungeonTools
 		[Outlet]
 		AppKit.NSTableView PartyTable { get; set; }
 
+		[Action ("OnAddPlayerButtonClicked:")]
+		partial void OnAddPlayerButtonClicked (Foundation.NSObject sender);
+
 		[Action ("OnRemoveButtonClicked:")]
 		partial void OnRemoveButtonClicked (Foundation.NSObject sender);
 		

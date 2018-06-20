@@ -28,8 +28,17 @@ namespace DungeonTools
 
         partial void OnRemoveButtonClicked(NSObject sender)
         {
+            if (PartyTable.SelectedRow != -1)
+            {
+                dataSource.CharacterEntries.RemoveAt((int)PartyTable.SelectedRow);
+                PartyTable.ReloadData();
+            }
+        }
+
+        partial void OnAddPlayerButtonClicked(NSObject sender)
+        {
             dataSource.CharacterEntries.Add(new CharacterEntry("Kresh", 10, "Jason"));
             PartyTable.ReloadData();
         }
-	}
+    }
 }
