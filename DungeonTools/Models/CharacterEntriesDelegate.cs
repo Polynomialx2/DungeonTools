@@ -33,7 +33,9 @@ namespace DungeonTools.Models
             switch (tableColumn.Title)
             {
                 case "Name":
-                    view.StringValue = DataSource.CharacterEntries[(int)row].character.Name;
+                    string characterName = DataSource.CharacterEntries[(int)row].character.Name;
+                    string playerName = DataSource.CharacterEntries[(int)row].character.PlayerName;
+                    view.StringValue = $"{characterName} ({playerName})";
                     break;
                 case "Initiative":
                     view.StringValue = DataSource.CharacterEntries[(int)row].character.Initiative.ToString();

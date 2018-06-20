@@ -9,10 +9,11 @@ namespace DungeonTools.Models
         {
         }
 
-        public CharacterEntry(string name, int initiative)
+        public CharacterEntry(string name, int initiative, string playerName)
         {
             this.character.Name = name;
             this.character.Initiative = initiative;
+            this.character.PlayerName = playerName;
         }
     }
 }
