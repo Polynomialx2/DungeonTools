@@ -73,6 +73,7 @@
     <Folder Include="Domain\" />
     <Folder Include="Views\" />
     <Folder Include="Controllers\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -91,10 +92,18 @@
     <Compile Include="Domain\Encounter.cs" />
     <Compile Include="Domain\Monster.cs" />
     <Compile Include="Domain\PlayerCharacter.cs" />
+    <Compile Include="Views\EncounterView.cs" />
+    <Compile Include="Views\EncounterView.designer.cs">
+      <DependentUpon>EncounterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\EncounterController.cs" />
+    <Compile Include="Controllers\EncounterController.designer.cs">
+      <DependentUpon>EncounterController.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
-    <InterfaceDefinition Include="Resources\Controllers\EncounterController.xib" />
+    <InterfaceDefinition Include="Views\EncounterView.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\.DS_Store" />
