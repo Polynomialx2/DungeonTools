@@ -5,13 +5,17 @@ using System;
 using Foundation;
 using AppKit;
 using DungeonTools.Models;
+using DungeonTools.Controllers;
 
 namespace DungeonTools
 {
+    public delegate void AddNewCharacterHandler(PlayerCharacter character);
+
 	public partial class EncounterController : NSViewController
 	{
         private Encounter _encounter = new Encounter();
-        CharacterInitiativeListDataSource dataSource = new CharacterInitiativeListDataSource();
+
+        public CharacterInitiativeListDataSource dataSource = new CharacterInitiativeListDataSource();
 
 		public EncounterController (IntPtr handle) : base (handle)
 		{
@@ -26,6 +30,20 @@ namespace DungeonTools
             // Do any additional setup after loading the view.
         }
 
+        public override void PrepareForSegue(NSStoryboardSegue segue, NSObject sender)
+        {
+            base.PrepareForSegue(segue, sender);
+            switch (segue.Identifier)
+            {
+                case "SegueToAddCharacter":
+                    AddCharacterViewController destinationController = (AddCharacterViewController)segue.DestinationController;
+                    destinationController.AddNewCharacterHandler = addCharacterToParty;
+                    break;
+                default:
+                    break;
+            }
+        }
+
         partial void OnRemoveButtonClicked(NSObject sender)
         {
             if (PartyTable.SelectedRow != -1)
@@ -35,9 +53,15 @@ namespace DungeonTools
             }
         }
 
-        partial void OnAddPlayerButtonClicked(NSObject sender)
+        //partial void OnAddPlayerButtonClicked(NSObject sender)
+        //{
+        //    dataSource.CharacterEntries.Add(new CharacterEntry("Kresh", 10, "Jason"));
+        //    PartyTable.ReloadData();
+        //}
+
+        private void addCharacterToParty(PlayerCharacter character)
         {
-            dataSource.CharacterEntries.Add(new CharacterEntry("Kresh", 10, "Jason"));
+            dataSource.CharacterEntries.Add(new CharacterEntry(character.Name, character.Initiative, character.PlayerName));
             PartyTable.ReloadData();
         }
     }

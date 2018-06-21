@@ -103,10 +103,19 @@
     <Compile Include="Models\CharacterEntry.cs" />
     <Compile Include="Models\CharacterInitiativeListDataSource.cs" />
     <Compile Include="Models\CharacterEntriesDelegate.cs" />
+    <Compile Include="Controllers\AddCharacterViewController.cs" />
+    <Compile Include="Controllers\AddCharacterViewController.designer.cs">
+      <DependentUpon>AddCharacterViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddCharacterView.cs" />
+    <Compile Include="Views\AddCharacterView.designer.cs">
+      <DependentUpon>AddCharacterView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="Views\EncounterView.xib" />
+    <InterfaceDefinition Include="Views\AddCharacterView.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\.DS_Store" />
