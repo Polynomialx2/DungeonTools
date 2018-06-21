@@ -70,6 +70,10 @@
     <Folder Include="Resources\" />
     <Folder Include="Models\" />
     <Folder Include="Helpers\" />
+    <Folder Include="Domain\" />
+    <Folder Include="Views\" />
+    <Folder Include="Controllers\" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -78,19 +82,43 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <Compile Include="ViewController.cs" />
-    <Compile Include="ViewController.designer.cs">
+    <Compile Include="Helpers\DungeonToolsConstants.cs" />
+    <Compile Include="Helpers\RollDice.cs" />
+    <Compile Include="Controllers\ViewController.cs" />
+    <Compile Include="Controllers\ViewController.designer.cs">
       <DependentUpon>ViewController.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\PlayerCharacter.cs" />
-    <Compile Include="Helpers\DungeonToolsConstants.cs" />
-    <Compile Include="Models\Creature.cs" />
-    <Compile Include="Models\Monster.cs" />
-    <Compile Include="Helpers\RollDice.cs" />
-    <Compile Include="Models\Encounter.cs" />
+    <Compile Include="Domain\Creature.cs" />
+    <Compile Include="Domain\Encounter.cs" />
+    <Compile Include="Domain\Monster.cs" />
+    <Compile Include="Domain\PlayerCharacter.cs" />
+    <Compile Include="Views\EncounterView.cs" />
+    <Compile Include="Views\EncounterView.designer.cs">
+      <DependentUpon>EncounterView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\EncounterController.cs" />
+    <Compile Include="Controllers\EncounterController.designer.cs">
+      <DependentUpon>EncounterController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CharacterEntry.cs" />
+    <Compile Include="Models\CharacterInitiativeListDataSource.cs" />
+    <Compile Include="Models\CharacterEntriesDelegate.cs" />
+    <Compile Include="Controllers\AddCharacterViewController.cs" />
+    <Compile Include="Controllers\AddCharacterViewController.designer.cs">
+      <DependentUpon>AddCharacterViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddCharacterView.cs" />
+    <Compile Include="Views\AddCharacterView.designer.cs">
+      <DependentUpon>AddCharacterView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
+    <InterfaceDefinition Include="Views\EncounterView.xib" />
+    <InterfaceDefinition Include="Views\AddCharacterView.xib" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\.DS_Store" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Mac\Xamarin.Mac.CSharp.targets" />
 </Project>
