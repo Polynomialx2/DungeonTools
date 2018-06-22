@@ -1,11 +1,12 @@
 ﻿using System;
 using AppKit;
+using DungeonTools.Helpers;
 
 namespace DungeonTools.Models
 {
     public class CharacterEntriesDelegate : NSTableViewDelegate
     {
-        private const string CellIdentifier = "CharacterEntryCell";
+        private string CellIdentifier = DungeonToolsConstants.ENCOUNTER_PC_CELL_IDENTIFIER;
         private CharacterInitiativeListDataSource DataSource;
 
         public CharacterEntriesDelegate(CharacterInitiativeListDataSource datasource)
@@ -32,13 +33,13 @@ namespace DungeonTools.Models
             // Set up view based on the column and row
             switch (tableColumn.Title)
             {
-                case "Name":
-                    string characterName = DataSource.CharacterEntries[(int)row].character.Name;
-                    string playerName = DataSource.CharacterEntries[(int)row].character.PlayerName;
+                case DungeonToolsConstants.ENCOUNTER_PC_NAME_COLUMN:
+                    string characterName = DataSource.CharacterEntries[(int)row].Name;
+                    string playerName = DataSource.CharacterEntries[(int)row].PlayerName;
                     view.StringValue = $"{characterName} ({playerName})";
                     break;
-                case "Initiative":
-                    view.StringValue = DataSource.CharacterEntries[(int)row].character.Initiative.ToString();
+                case DungeonToolsConstants.ENCOUNTER_PC_INITIATIVE_COLUMN:
+                    view.StringValue = DataSource.CharacterEntries[(int)row].Initiative.ToString();
                     break;
             }
 

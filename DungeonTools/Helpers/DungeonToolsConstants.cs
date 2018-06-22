@@ -4,26 +4,38 @@ namespace DungeonTools.Helpers
     public static class DungeonToolsConstants
     {
         // Abilities
-        public static readonly string STRENGTH = "Strength";
-        public static readonly string DEXTERITY = "Dexterity";
-        public static readonly string CONSTITUTION = "Constitution";
-        public static readonly string INTELLIGENCE = "Intelligence";
-        public static readonly string WISDOM = "Wisdom";
-        public static readonly string CHARISMA = "Charisma";
+        public const string STRENGTH = "Strength";
+        public const string DEXTERITY = "Dexterity";
+        public const string CONSTITUTION = "Constitution";
+        public const string INTELLIGENCE = "Intelligence";
+        public const string WISDOM = "Wisdom";
+        public const string CHARISMA = "Charisma";
 
         // Dice
-        public static readonly string D4 = "1d4";
-        public static readonly string D6 = "1d6";
-        public static readonly string D8 = "1d8";
-        public static readonly string D10 = "1d10";
-        public static readonly string D12 = "1d12";
-        public static readonly string D20 = "1d20";
-        public static readonly string D100 = "1d100";
+        public const string D4 = "1d4";
+        public const string D6 = "1d6";
+        public const string D8 = "1d8";
+        public const string D10 = "1d10";
+        public const string D12 = "1d12";
+        public const string D20 = "1d20";
+        public const string D100 = "1d100";
 
         // Regex
-        public static readonly string REGEX_VALIDATE_DICE_STRING = "^[1-9]\\d*(d|D)(((?=[1-9])\\d*$)|((?=[1-9])\\d*(\\+|-)(?=[1-9])\\d*$))";
-        public static readonly string REGEX_NUMBER_OF_DICE = "^\\d*";
-        public static readonly string REGEX_DICE_TYPE = "(?<=d)\\d*";
-        public static readonly string REGEX_MODIFIER = "(?<=(\\+|-))\\d*";
+        public const string REGEX_VALIDATE_DICE_STRING = "^[1-9]\\d*(d|D)(((?=[1-9])\\d*$)|((?=[1-9])\\d*(\\+|-)(?=[1-9])\\d*$))";
+        public const string REGEX_NUMBER_OF_DICE = "^\\d*";
+        public const string REGEX_DICE_TYPE = "(?<=d)\\d*";
+        public const string REGEX_MODIFIER = "(?<=(\\+|-))\\d*";
+
+        // Encounter tables
+        public const string ENCOUNTER_PC_CELL_IDENTIFIER = "CharacterEntryCell";
+        public const string ENCOUNTER_PC_NAME_COLUMN = "Name";
+        public const string ENCOUNTER_PC_INITIATIVE_COLUMN = "Initiative";
+        public const string ENCOUNTER_MONSTER_CELL_IDENTIFIER = "MonsterEntryCell";
+        public const string ENCOUNTER_MONSTER_NAME_COLUMN = "Name";
+        public const string ENCOUNTER_MONSTER_INITIATIVE_COLUMN = "Initiative";
+        public const string ENCOUNTER_MONSTER_INITIATIVE_MODIFIER_COLUMN = "Initiative Modifier";
+        public const string ENCOUNTER_MONSTER_HIT_POINTS_COLUMN = "Hit Points";
+        public const string ENCOUNTER_MONSTER_HIT_DICE_COLUMN = "Hit Dice";
+
     }
 }

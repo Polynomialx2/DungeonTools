@@ -15,7 +15,8 @@ namespace DungeonTools
 	{
         private Encounter _encounter = new Encounter();
 
-        public CharacterInitiativeListDataSource dataSource = new CharacterInitiativeListDataSource();
+        public CharacterInitiativeListDataSource characterDataSource = new CharacterInitiativeListDataSource();
+        public MonsterInitiativeListDataSource monsterDataSource = new MonsterInitiativeListDataSource();
 
 		public EncounterController (IntPtr handle) : base (handle)
 		{
@@ -24,10 +25,10 @@ namespace DungeonTools
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            PartyTable.DataSource = dataSource;
-            PartyTable.Delegate = new CharacterEntriesDelegate(dataSource);
-
-            // Do any additional setup after loading the view.
+            PartyTable.DataSource = characterDataSource;
+            PartyTable.Delegate = new CharacterEntriesDelegate(characterDataSource);
+            MonsterTable.DataSource = monsterDataSource;
+            MonsterTable.Delegate = new MonsterEntriesDelegate(monsterDataSource);
         }
 
         public override void PrepareForSegue(NSStoryboardSegue segue, NSObject sender)
@@ -44,25 +45,30 @@ namespace DungeonTools
             }
         }
 
-        partial void OnRemoveButtonClicked(NSObject sender)
+        partial void OnRemovePlayerButtonClicked(NSObject sender)
         {
             if (PartyTable.SelectedRow != -1)
             {
-                dataSource.CharacterEntries.RemoveAt((int)PartyTable.SelectedRow);
+                characterDataSource.CharacterEntries.RemoveAt((int)PartyTable.SelectedRow);
                 PartyTable.ReloadData();
             }
         }
 
-        //partial void OnAddPlayerButtonClicked(NSObject sender)
-        //{
-        //    dataSource.CharacterEntries.Add(new CharacterEntry("Kresh", 10, "Jason"));
-        //    PartyTable.ReloadData();
-        //}
+        partial void OnRemoveMonsterButtonClicked(NSObject sender)
+        {
+            if (MonsterTable.SelectedRow != -1)
+            {
+                monsterDataSource.MonsterEntries.RemoveAt((int)MonsterTable.SelectedRow);
+                MonsterTable.ReloadData();
+            }
+        }
 
         private void addCharacterToParty(PlayerCharacter character)
         {
-            dataSource.CharacterEntries.Add(new CharacterEntry(character.Name, character.Initiative, character.PlayerName));
+            characterDataSource.CharacterEntries.Add(character);
             PartyTable.ReloadData();
         }
+
+
     }
 }
