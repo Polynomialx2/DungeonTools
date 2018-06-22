@@ -34,12 +34,12 @@ namespace DungeonTools.Models
             switch (tableColumn.Title)
             {
                 case DungeonToolsConstants.ENCOUNTER_PC_NAME_COLUMN:
-                    string characterName = DataSource.CharacterEntries[(int)row].character.Name;
-                    string playerName = DataSource.CharacterEntries[(int)row].character.PlayerName;
+                    string characterName = DataSource.CharacterEntries[(int)row].Name;
+                    string playerName = DataSource.CharacterEntries[(int)row].PlayerName;
                     view.StringValue = $"{characterName} ({playerName})";
                     break;
                 case DungeonToolsConstants.ENCOUNTER_PC_INITIATIVE_COLUMN:
-                    view.StringValue = DataSource.CharacterEntries[(int)row].character.Initiative.ToString();
+                    view.StringValue = DataSource.CharacterEntries[(int)row].Initiative.ToString();
                     break;
             }
 

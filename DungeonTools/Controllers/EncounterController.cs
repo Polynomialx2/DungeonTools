@@ -61,7 +61,7 @@ namespace DungeonTools
 
         private void addCharacterToParty(PlayerCharacter character)
         {
-            dataSource.CharacterEntries.Add(new CharacterEntry(character.Name, character.Initiative, character.PlayerName));
+            dataSource.CharacterEntries.Add(character);
             PartyTable.ReloadData();
         }
     }

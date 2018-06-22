@@ -6,7 +6,7 @@ namespace DungeonTools.Models
 {
     public class CharacterInitiativeListDataSource : NSTableViewDataSource
     {
-        public List<CharacterEntry> CharacterEntries = new List<CharacterEntry>();
+        public List<PlayerCharacter> CharacterEntries = new List<PlayerCharacter>();
 
         public CharacterInitiativeListDataSource()
         {
