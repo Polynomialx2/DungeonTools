@@ -761,11 +761,11 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="GX8-Tm-e4q">
-                                                            <rect key="frame" x="161.5" y="1" width="60" height="17"/>
+                                                            <rect key="frame" x="161.5" y="1" width="61" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7rd-m4-Tj5">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="60" height="17"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="61" height="17"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                                                     <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="N7M-Zy-G6a">
                                                                         <font key="font" metaFont="system"/>
@@ -785,7 +785,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="iRm-dp-OsX">
-                                    <rect key="frame" x="1" y="149" width="224" height="16"/>
+                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1IW-OK-41Q">
@@ -833,7 +833,7 @@
                                 <rect key="frame" x="267" y="92" width="258" height="166"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <clipView key="contentView" ambiguous="YES" id="x9i-KH-10s">
-                                    <rect key="frame" x="1" y="23" width="256" height="142"/>
+                                    <rect key="frame" x="1" y="0.0" width="256" height="165"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" alternatingRowBackgroundColors="YES" columnSelection="YES" autosaveColumns="NO" rowSizeStyle="automatic" headerView="43s-JN-jUe" viewBased="YES" id="Wt8-aU-gL0">
@@ -1013,7 +1013,7 @@
                                     </subviews>
                                 </clipView>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="fHm-mQ-1sd">
-                                    <rect key="frame" x="1" y="149" width="256" height="16"/>
+                                    <rect key="frame" x="1" y="7" width="0.0" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                                 <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="e9u-2a-J4N">
