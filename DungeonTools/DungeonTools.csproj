@@ -120,6 +120,8 @@
     <Compile Include="Views\AddMonsterView.designer.cs">
       <DependentUpon>AddMonsterView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\InitiativeOrderListDataSource.cs" />
+    <Compile Include="Models\CreatureEntriesDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

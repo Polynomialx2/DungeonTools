@@ -36,6 +36,9 @@ namespace DungeonTools.Helpers
         public const string ENCOUNTER_MONSTER_INITIATIVE_MODIFIER_COLUMN = "InitiativeModifier";
         public const string ENCOUNTER_MONSTER_HIT_POINTS_COLUMN = "Hit Points";
         public const string ENCOUNTER_MONSTER_HIT_DICE_COLUMN = "Hit Dice";
+        public const string ENCOUNTER_INITIATIVE_CELL_IDENTIFIER = "InitiativeOrderEntryCell";
+        public const string ENCOUNTER_INITIATIVE_ORDER_NAME = "Creature Name";
+        public const string ENCOUNTER_INITIATIVE_ORDER_INITIATIVE = "Initiative";
 
     }
 }
