@@ -10,6 +10,7 @@ using DungeonTools.Controllers;
 namespace DungeonTools
 {
     public delegate void AddNewCharacterHandler(PlayerCharacter character);
+    public delegate void AddNewMonsterHandler(Monster monster, bool reloadFlag);
 
 	public partial class EncounterController : NSViewController
 	{
@@ -37,8 +38,13 @@ namespace DungeonTools
             switch (segue.Identifier)
             {
                 case "SegueToAddCharacter":
-                    AddCharacterViewController destinationController = (AddCharacterViewController)segue.DestinationController;
-                    destinationController.AddNewCharacterHandler = addCharacterToParty;
+                    AddCharacterViewController addCharacterViewController = (AddCharacterViewController)segue.DestinationController;
+                    // Use a delegate to transfer information between controllers
+                    addCharacterViewController.AddNewCharacterHandler = addCharacterToParty;
+                    break;
+                case "SegueToAddMonster":
+                    AddMonsterViewController addMonsterViewController = (AddMonsterViewController)segue.DestinationController;
+                    addMonsterViewController.AddNewMonsterHandler = addMonstersToEncounter;
                     break;
                 default:
                     break;
@@ -69,6 +75,13 @@ namespace DungeonTools
             PartyTable.ReloadData();
         }
 
-
+        private void addMonstersToEncounter(Monster monster, bool reloadFlag)
+        {
+            monsterDataSource.MonsterEntries.Add(monster);
+            if (reloadFlag)
+            {
+                MonsterTable.ReloadData();
+            }
+        }
     }
 }

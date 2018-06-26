@@ -112,11 +112,20 @@
     </Compile>
     <Compile Include="Models\MonsterEntriesDelegate.cs" />
     <Compile Include="Models\MonsterInitiativeListDataSource.cs" />
+    <Compile Include="Controllers\AddMonsterViewController.cs" />
+    <Compile Include="Controllers\AddMonsterViewController.designer.cs">
+      <DependentUpon>AddMonsterViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AddMonsterView.cs" />
+    <Compile Include="Views\AddMonsterView.designer.cs">
+      <DependentUpon>AddMonsterView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />
     <InterfaceDefinition Include="Views\EncounterView.xib" />
     <InterfaceDefinition Include="Views\AddCharacterView.xib" />
+    <InterfaceDefinition Include="Views\AddMonsterView.xib" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\.DS_Store" />
