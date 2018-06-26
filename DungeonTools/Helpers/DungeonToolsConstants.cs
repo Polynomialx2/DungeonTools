@@ -33,7 +33,7 @@ namespace DungeonTools.Helpers
         public const string ENCOUNTER_MONSTER_CELL_IDENTIFIER = "MonsterEntryCell";
         public const string ENCOUNTER_MONSTER_NAME_COLUMN = "Name";
         public const string ENCOUNTER_MONSTER_INITIATIVE_COLUMN = "Initiative";
-        public const string ENCOUNTER_MONSTER_INITIATIVE_MODIFIER_COLUMN = "Initiative Modifier";
+        public const string ENCOUNTER_MONSTER_INITIATIVE_MODIFIER_COLUMN = "InitiativeModifier";
         public const string ENCOUNTER_MONSTER_HIT_POINTS_COLUMN = "Hit Points";
         public const string ENCOUNTER_MONSTER_HIT_DICE_COLUMN = "Hit Dice";
 

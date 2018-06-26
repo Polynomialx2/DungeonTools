@@ -41,7 +41,8 @@ namespace DungeonTools.Models
                     break;
                 case DungeonToolsConstants.ENCOUNTER_MONSTER_INITIATIVE_MODIFIER_COLUMN:
                     int modifier = DataSource.MonsterEntries[(int)row].InitiativeModifier;
-                    view.StringValue = modifier.ToString("+0;-#");
+                    //view.StringValue = modifier.ToString("+0;-#");
+                    view.StringValue = modifier.ToString();
                     break;
                 case DungeonToolsConstants.ENCOUNTER_MONSTER_HIT_POINTS_COLUMN:
                     view.StringValue = DataSource.MonsterEntries[(int)row].HitPoints.ToString();

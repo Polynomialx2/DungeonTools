@@ -48,5 +48,24 @@ namespace DungeonTools.Controllers
                 return (AddMonsterView)base.View;
             }
         }
+
+        partial void OnSaveButtonClicked(NSObject sender)
+        {
+            if (_addNewMonsterHandler != null)
+            {
+                int count = MonsterCount.IntValue;
+                bool reloadData = false;
+                for (int i = 0; i < MonsterCount.IntValue; i++)
+                {
+                    if (i == count - 1)
+                    {
+                        reloadData = true;
+                    }
+                    string monsterName = $"{MonsterType.StringValue} {i + 1}";
+                    _addNewMonsterHandler(new Monster(monsterName, MonsterInitiative.IntValue), reloadData);
+                }
+                DismissViewController(this);
+            }
+        }
     }
 }
