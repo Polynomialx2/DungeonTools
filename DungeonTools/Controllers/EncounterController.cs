@@ -18,6 +18,7 @@ namespace DungeonTools
 
         public CharacterInitiativeListDataSource characterDataSource = new CharacterInitiativeListDataSource();
         public MonsterInitiativeListDataSource monsterDataSource = new MonsterInitiativeListDataSource();
+        public InitiativeOrderListDataSource initiativeOrderDataSource = new InitiativeOrderListDataSource();
 
 		public EncounterController (IntPtr handle) : base (handle)
 		{
@@ -30,6 +31,8 @@ namespace DungeonTools
             PartyTable.Delegate = new CharacterEntriesDelegate(characterDataSource);
             MonsterTable.DataSource = monsterDataSource;
             MonsterTable.Delegate = new MonsterEntriesDelegate(monsterDataSource);
+            InitiativeTable.DataSource = initiativeOrderDataSource;
+            InitiativeTable.Delegate = new CreatureEntriesDelegate(initiativeOrderDataSource);
         }
 
         public override void PrepareForSegue(NSStoryboardSegue segue, NSObject sender)
@@ -67,6 +70,15 @@ namespace DungeonTools
                 monsterDataSource.MonsterEntries.RemoveAt((int)MonsterTable.SelectedRow);
                 MonsterTable.ReloadData();
             }
+        }
+
+        partial void OnStartEncounterButtonClicked(NSObject sender)
+        {
+            _encounter.Party = characterDataSource.CharacterEntries;
+            _encounter.Monsters = monsterDataSource.MonsterEntries;
+            _encounter.start();
+            initiativeOrderDataSource.CreatureEntries = _encounter.InitiativeOrder;
+            InitiativeTable.ReloadData();
         }
 
         private void addCharacterToParty(PlayerCharacter character)

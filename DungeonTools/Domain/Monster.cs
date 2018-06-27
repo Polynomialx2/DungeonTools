@@ -26,10 +26,11 @@ namespace DungeonTools.Models
         }
         public int HitPoints { get => _hitPoints; set => _hitPoints = value; }
 
-        public Monster(string name, int initiativeModifier)
+        public Monster(string name, string hitDice, int initiativeModifier)
         {
             base.Name = name;
             base.InitiativeModifier = initiativeModifier;
+            _hitDice = hitDice;
         }
 
         /*

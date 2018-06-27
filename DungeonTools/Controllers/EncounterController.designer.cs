@@ -13,6 +13,9 @@ namespace DungeonTools
 	partial class EncounterController
 	{
 		[Outlet]
+		AppKit.NSTableView InitiativeTable { get; set; }
+
+		[Outlet]
 		AppKit.NSTableView MonsterTable { get; set; }
 
 		[Outlet]
@@ -32,9 +35,17 @@ namespace DungeonTools
 
 		[Action ("OnRemovePlayerButtonClicked:")]
 		partial void OnRemovePlayerButtonClicked (Foundation.NSObject sender);
+
+		[Action ("OnStartEncounterButtonClicked:")]
+		partial void OnStartEncounterButtonClicked (Foundation.NSObject sender);
 		
 		void ReleaseDesignerOutlets ()
 		{
+			if (InitiativeTable != null) {
+				InitiativeTable.Dispose ();
+				InitiativeTable = null;
+			}
+
 			if (MonsterTable != null) {
 				MonsterTable.Dispose ();
 				MonsterTable = null;

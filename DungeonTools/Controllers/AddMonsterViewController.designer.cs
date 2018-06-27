@@ -16,6 +16,9 @@ namespace DungeonTools.Controllers
 		AppKit.NSTextField MonsterCount { get; set; }
 
 		[Outlet]
+		AppKit.NSTextField MonsterHitDice { get; set; }
+
+		[Outlet]
 		AppKit.NSTextField MonsterInitiative { get; set; }
 
 		[Outlet]
@@ -29,11 +32,6 @@ namespace DungeonTools.Controllers
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (MonsterType != null) {
-				MonsterType.Dispose ();
-				MonsterType = null;
-			}
-
 			if (MonsterCount != null) {
 				MonsterCount.Dispose ();
 				MonsterCount = null;
@@ -42,6 +40,16 @@ namespace DungeonTools.Controllers
 			if (MonsterInitiative != null) {
 				MonsterInitiative.Dispose ();
 				MonsterInitiative = null;
+			}
+
+			if (MonsterType != null) {
+				MonsterType.Dispose ();
+				MonsterType = null;
+			}
+
+			if (MonsterHitDice != null) {
+				MonsterHitDice.Dispose ();
+				MonsterHitDice = null;
 			}
 		}
 	}

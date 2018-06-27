@@ -14,7 +14,7 @@ namespace DungeonTools.Models
         {
         }
 
-        public List<PlayerCharacter> Party { get => _party; }
+        public List<PlayerCharacter> Party { get => _party; set => _party = value; }
         public List<Monster> Monsters { get => _monsters; set => _monsters = value; }
         public List<Creature> InitiativeOrder { get => _initiativeOrder; set => _initiativeOrder = value; }
 
