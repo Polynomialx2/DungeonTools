@@ -39,6 +39,7 @@ namespace DungeonTools.Helpers
         public const string ENCOUNTER_INITIATIVE_CELL_IDENTIFIER = "InitiativeOrderEntryCell";
         public const string ENCOUNTER_INITIATIVE_ORDER_NAME = "Creature Name";
         public const string ENCOUNTER_INITIATIVE_ORDER_INITIATIVE = "Initiative";
+        public const string ENCOUNTER_INITIATIVE_HIT_POINTS = "HitPoints";
 
     }
 }

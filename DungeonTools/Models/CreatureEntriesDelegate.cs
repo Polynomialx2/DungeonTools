@@ -31,7 +31,7 @@ namespace DungeonTools.Models
             }
 
             // Set up view based on the column and row
-            switch (tableColumn.Title)
+            switch (tableColumn.Identifier)
             {
                 case DungeonToolsConstants.ENCOUNTER_INITIATIVE_ORDER_NAME:
                     view.StringValue = DataSource.CreatureEntries[(int)row].Name;
@@ -39,8 +39,18 @@ namespace DungeonTools.Models
                 case DungeonToolsConstants.ENCOUNTER_INITIATIVE_ORDER_INITIATIVE:
                     view.StringValue = DataSource.CreatureEntries[(int)row].Initiative.ToString();
                     break;
+                case DungeonToolsConstants.ENCOUNTER_INITIATIVE_HIT_POINTS:
+                    var creature = DataSource.CreatureEntries[(int)row];
+                    if (creature is Monster)
+                    {
+                        view.StringValue = ((Monster)creature).HitPoints.ToString();
+                    }
+                    else
+                    {
+                        view.StringValue = String.Empty;
+                    }
+                    break;
             }
-
             return view;
         }
     }
