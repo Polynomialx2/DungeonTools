@@ -6,6 +6,8 @@ namespace DungeonTools.Helpers
 {
     public static class RollDice
     {
+        private static Random rng = new Random();
+
         /*
          * Returns the result of rolling the given dice string
          * 
@@ -40,10 +42,9 @@ namespace DungeonTools.Helpers
         private static int CalculateDiceValue(int numberOfDice, int diceType, int modifier)
         {
             int value = 0;
-            Random random = new Random();
             for (int i = 0; i < numberOfDice; i++)
             {
-                value += random.Next(1, diceType);
+                value += rng.Next(1, diceType);
             }
             return value + modifier;
         }
