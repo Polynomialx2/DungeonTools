@@ -1288,6 +1288,17 @@
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="33R-Gf-x1G">
+                                <rect key="frame" x="47" y="125" width="129" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="End Encounter" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="98k-dl-xfD">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="OnEndEncounterButtonClicked:" target="rms-68-9V7" id="IHV-3V-2F0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="71A-BC-LcZ" firstAttribute="centerX" secondItem="xXB-Id-z32" secondAttribute="centerX" id="0Ur-uU-66a"/>
@@ -1321,15 +1332,17 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="EndEncounterButton" destination="33R-Gf-x1G" id="YJq-hN-TRO"/>
                         <outlet property="InitiativeTable" destination="7Jz-be-Ikq" id="o3e-BL-1Ya"/>
                         <outlet property="MonsterTable" destination="Wt8-aU-gL0" id="9ps-Hz-TeR"/>
                         <outlet property="PartyTable" destination="y1O-PG-dAL" id="Mdg-7h-y3Q"/>
                         <outlet property="RemoveButton" destination="uyb-XM-ci1" id="q4K-iL-gld"/>
+                        <outlet property="StartEncounterButton" destination="JgR-Z7-1mh" id="CHj-lj-OKI"/>
                     </connections>
                 </viewController>
                 <customObject id="mwd-XD-y18" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="881" y="652"/>
+            <point key="canvasLocation" x="880.5" y="652"/>
         </scene>
         <!--Add Character View Controller-->
         <scene sceneID="4IY-Nh-6ep">

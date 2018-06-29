@@ -79,6 +79,16 @@ namespace DungeonTools
             _encounter.start();
             initiativeOrderDataSource.CreatureEntries = _encounter.InitiativeOrder;
             InitiativeTable.ReloadData();
+            StartEncounterButton.Enabled = false;
+            EndEncounterButton.Enabled = true;
+        }
+
+        partial void OnEndEncounterButtonClicked(NSObject sender)
+        {
+            _encounter.endEncounter();
+            InitiativeTable.ReloadData();
+            StartEncounterButton.Enabled = true;
+            EndEncounterButton.Enabled = false;
         }
 
         private void addCharacterToParty(PlayerCharacter character)

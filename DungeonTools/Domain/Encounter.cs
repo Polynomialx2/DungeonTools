@@ -32,6 +32,13 @@ namespace DungeonTools.Models
             Party.Clear();
         }
 
+        public void endEncounter()
+        {
+            clearParty();
+            clearMonsters();
+            InitiativeOrder.Clear();
+        }
+
         public void addMonster(Monster monster)
         {
             Monsters.Add(monster);
