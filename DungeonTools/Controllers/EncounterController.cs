@@ -76,11 +76,14 @@ namespace DungeonTools
         {
             _encounter.Party = characterDataSource.CharacterEntries;
             _encounter.Monsters = monsterDataSource.MonsterEntries;
-            _encounter.start();
-            initiativeOrderDataSource.CreatureEntries = _encounter.InitiativeOrder;
-            InitiativeTable.ReloadData();
-            StartEncounterButton.Enabled = false;
-            EndEncounterButton.Enabled = true;
+            if (_encounter.Party.Count > 0 || _encounter.Monsters.Count > 0)
+            {
+                _encounter.start();
+                initiativeOrderDataSource.CreatureEntries = _encounter.InitiativeOrder;
+                InitiativeTable.ReloadData();
+                StartEncounterButton.Enabled = false;
+                EndEncounterButton.Enabled = true;
+            }
         }
 
         partial void OnEndEncounterButtonClicked(NSObject sender)

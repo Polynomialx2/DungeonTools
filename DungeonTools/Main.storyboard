@@ -890,43 +890,6 @@
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn identifier="Initiative" width="40" minWidth="40" maxWidth="1000" id="LUC-uF-ze8">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Initiative">
-                                                        <font key="font" metaFont="smallSystem"/>
-                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
-                                                    </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" title="Text Cell" id="weD-Oc-EMG">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
-                                                    <prototypeCellViews>
-                                                        <tableCellView id="iRE-eZ-KQR">
-                                                            <rect key="frame" x="151" y="1" width="40" height="17"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="7bu-fU-Pgg">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="40" height="17"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="kBT-vu-FUC">
-                                                                        <font key="font" metaFont="system"/>
-                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="7bu-fU-Pgg" firstAttribute="centerX" secondItem="iRE-eZ-KQR" secondAttribute="centerX" id="DEf-jq-zMr"/>
-                                                                <constraint firstItem="7bu-fU-Pgg" firstAttribute="centerY" secondItem="iRE-eZ-KQR" secondAttribute="centerY" id="M54-ox-58W"/>
-                                                                <constraint firstItem="7bu-fU-Pgg" firstAttribute="leading" secondItem="iRE-eZ-KQR" secondAttribute="leading" constant="2" id="dzX-uE-UCy"/>
-                                                            </constraints>
-                                                            <connections>
-                                                                <outlet property="textField" destination="7bu-fU-Pgg" id="dzp-gu-N6Z"/>
-                                                            </connections>
-                                                        </tableCellView>
-                                                    </prototypeCellViews>
-                                                </tableColumn>
                                                 <tableColumn identifier="InitiativeModifier" width="25" minWidth="10" maxWidth="3.4028234663852886e+38" id="3p7-UU-jcH">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="InitiativeModifier">
                                                         <font key="font" metaFont="smallSystem"/>
@@ -941,7 +904,7 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="nZA-GL-YGI">
-                                                            <rect key="frame" x="194" y="1" width="25" height="17"/>
+                                                            <rect key="frame" x="151" y="1" width="25" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="kvr-df-zCI">
@@ -964,43 +927,6 @@
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>
-                                                <tableColumn identifier="Hit Points" width="25" minWidth="10" maxWidth="3.4028234663852886e+38" id="ntz-Ur-L6i">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="HP">
-                                                        <font key="font" metaFont="smallSystem"/>
-                                                        <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    </tableHeaderCell>
-                                                    <textFieldCell key="dataCell" lineBreakMode="truncatingTail" selectable="YES" editable="YES" alignment="left" title="Text Cell" id="T65-3U-arf">
-                                                        <font key="font" metaFont="system"/>
-                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                        <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                    </textFieldCell>
-                                                    <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
-                                                    <prototypeCellViews>
-                                                        <tableCellView id="qZM-an-sYz">
-                                                            <rect key="frame" x="222" y="1" width="25" height="17"/>
-                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                            <subviews>
-                                                                <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="nO3-sB-f0i">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="25" height="17"/>
-                                                                    <textFieldCell key="cell" lineBreakMode="truncatingTail" sendsActionOnEndEditing="YES" title="Table View Cell" id="9SH-6I-9dd">
-                                                                        <font key="font" metaFont="system"/>
-                                                                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                                                    </textFieldCell>
-                                                                </textField>
-                                                            </subviews>
-                                                            <constraints>
-                                                                <constraint firstItem="nO3-sB-f0i" firstAttribute="leading" secondItem="qZM-an-sYz" secondAttribute="leading" constant="2" id="eR0-g0-5qk"/>
-                                                                <constraint firstItem="nO3-sB-f0i" firstAttribute="centerY" secondItem="qZM-an-sYz" secondAttribute="centerY" id="p29-yw-goM"/>
-                                                                <constraint firstItem="nO3-sB-f0i" firstAttribute="centerX" secondItem="qZM-an-sYz" secondAttribute="centerX" id="ric-DR-RLm"/>
-                                                            </constraints>
-                                                            <connections>
-                                                                <outlet property="textField" destination="nO3-sB-f0i" id="QnD-Hf-Qbv"/>
-                                                            </connections>
-                                                        </tableCellView>
-                                                    </prototypeCellViews>
-                                                </tableColumn>
                                                 <tableColumn identifier="Hit Dice" width="50" minWidth="10" maxWidth="3.4028234663852886e+38" id="orQ-kf-Efd">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="Hit Dice">
                                                         <font key="font" metaFont="smallSystem"/>
@@ -1015,7 +941,7 @@
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
                                                         <tableCellView id="DCb-Sx-WF6">
-                                                            <rect key="frame" x="250" y="1" width="50" height="17"/>
+                                                            <rect key="frame" x="179" y="1" width="50" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="Fua-AJ-m7u">
