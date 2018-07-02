@@ -34,8 +34,6 @@ namespace DungeonTools.Models
 
         public void endEncounter()
         {
-            //clearParty();
-            //clearMonsters();
             InitiativeOrder.Clear();
         }
 
@@ -52,18 +50,43 @@ namespace DungeonTools.Models
         public void start()
         {
             List<Creature> initiativeOrder = new List<Creature>();
-            foreach (Monster monster in Monsters)
-            {
-                monster.RollInitiative();
-                monster.RollHitPoints();
-                initiativeOrder.Add(monster);
-            }
-            foreach (PlayerCharacter character in Party)
-            {
-                initiativeOrder.Add(character);
-            }
+            Dictionary<string, int> monsterInitiatives = GetMonsterInitiatives(Monsters);
+
+            InitializeMonsters(monsterInitiatives, Monsters);
+            initiativeOrder.AddRange(Monsters);
+            initiativeOrder.AddRange(Party);
+
             // Sorts by initiative
             InitiativeOrder = initiativeOrder.OrderByDescending(cw => cw.Initiative).ToList();
+        }
+
+        // Prepares monsters for encounter by initializing initiative and hit points
+
+        private void InitializeMonsters(Dictionary<string, int> initiatives, List<Monster> monsters)
+        {
+            foreach (Monster monster in monsters)
+            {
+                monster.RollHitPoints();
+                monster.Initiative = initiatives[monster.Type];
+            }
+        }
+
+        // Rolls the initiative for each monster type
+
+        private Dictionary<string, int> GetMonsterInitiatives(List<Monster> monsters)
+        {
+            Dictionary<string, int> initiatives = new Dictionary<string, int>();
+            List<string> types = new List<string>();
+            foreach (Monster monster in monsters)
+            {
+                if (!types.Contains(monster.Type))
+                {
+                    monster.RollInitiative();
+                    initiatives.Add(monster.Type, monster.Initiative);
+                    types.Add(monster.Type);
+                }
+            }
+            return initiatives;
         }
     }
 }

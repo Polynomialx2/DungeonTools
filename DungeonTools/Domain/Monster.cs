@@ -7,6 +7,7 @@ namespace DungeonTools.Models
     {
         private string _hitDice = String.Empty;
         private int _hitPoints = 0;
+        private string _type;
 
         public string HitDice
         {
@@ -25,11 +26,13 @@ namespace DungeonTools.Models
             }
         }
         public int HitPoints { get => _hitPoints; set => _hitPoints = value; }
+        public string Type { get => _type; set => _type = value; }
 
-        public Monster(string name, string hitDice, int initiativeModifier)
+        public Monster(string type, string hitDice, int initiativeModifier)
         {
-            base.Name = name;
             base.InitiativeModifier = initiativeModifier;
+            base.Name = type;
+            _type = type;
             _hitDice = hitDice;
         }
 

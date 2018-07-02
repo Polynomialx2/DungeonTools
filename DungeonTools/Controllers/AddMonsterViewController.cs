@@ -62,7 +62,9 @@ namespace DungeonTools.Controllers
                         reloadData = true;
                     }
                     string monsterName = $"{MonsterType.StringValue} {i + 1}";
-                    _addNewMonsterHandler(new Monster(monsterName, MonsterHitDice.StringValue, MonsterInitiative.IntValue), reloadData);
+                    Monster monster = new Monster(MonsterType.StringValue, MonsterHitDice.StringValue, MonsterInitiative.IntValue);
+                    monster.Name = monsterName;
+                    _addNewMonsterHandler(monster, reloadData);
                 }
                 DismissViewController(this);
             }
