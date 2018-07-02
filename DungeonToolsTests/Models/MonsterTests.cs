@@ -10,7 +10,7 @@ namespace DungeonToolsTests.Models
         [Test()]
         public void CanRollInitiativeForMonster()
         {
-            Monster beholder = new Monster("Beholder", 6);
+            Monster beholder = new Monster("Beholder", "1d6", 6);
             beholder.RollInitiative();
             Assert.IsTrue(beholder.Initiative >= 7 && beholder.Initiative <= 26);
         }
@@ -18,7 +18,7 @@ namespace DungeonToolsTests.Models
         [Test()]
         public void CanRollHitPointsForMonster()
         {
-            Monster beholder = new Monster("Beholder", 6);
+            Monster beholder = new Monster("Beholder", "1d6", 6);
             beholder.HitDice = "11d8+44";
             beholder.RollHitPoints();
             Assert.IsTrue(beholder.HitPoints > 0);
