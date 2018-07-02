@@ -34,8 +34,6 @@ namespace DungeonTools.Models
 
         public void endEncounter()
         {
-            //clearParty();
-            //clearMonsters();
             InitiativeOrder.Clear();
         }
 
@@ -54,7 +52,7 @@ namespace DungeonTools.Models
             List<Creature> initiativeOrder = new List<Creature>();
             Dictionary<string, int> monsterInitiatives = GetMonsterInitiatives(Monsters);
 
-            initializeMonsters(monsterInitiatives, Monsters);
+            InitializeMonsters(monsterInitiatives, Monsters);
             initiativeOrder.AddRange(Monsters);
             initiativeOrder.AddRange(Party);
 
@@ -64,7 +62,7 @@ namespace DungeonTools.Models
 
         // Prepares monsters for encounter by initializing initiative and hit points
 
-        private void initializeMonsters(Dictionary<string, int> initiatives, List<Monster> monsters)
+        private void InitializeMonsters(Dictionary<string, int> initiatives, List<Monster> monsters)
         {
             foreach (Monster monster in monsters)
             {
