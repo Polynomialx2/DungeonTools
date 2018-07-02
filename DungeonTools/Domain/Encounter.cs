@@ -34,8 +34,8 @@ namespace DungeonTools.Models
 
         public void endEncounter()
         {
-            clearParty();
-            clearMonsters();
+            //clearParty();
+            //clearMonsters();
             InitiativeOrder.Clear();
         }
 
@@ -63,7 +63,7 @@ namespace DungeonTools.Models
                 initiativeOrder.Add(character);
             }
             // Sorts by initiative
-            InitiativeOrder = initiativeOrder.OrderBy(cw => cw.Initiative).ToList();
+            InitiativeOrder = initiativeOrder.OrderByDescending(cw => cw.Initiative).ToList();
         }
     }
 }
