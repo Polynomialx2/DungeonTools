@@ -72,7 +72,7 @@ namespace DungeonTools.Controllers
                     {
                         reloadData = true;
                     }
-                    string monsterName = $"{MonsterType.StringValue} {i + 1}";
+                    string monsterName = $"{MonsterType.StringValue}";
                     Monster monster = new Monster(MonsterType.StringValue, MonsterHitDice.StringValue, MonsterInitiative.IntValue);
                     monster.Name = monsterName;
                     _addNewMonsterHandler(monster, reloadData);

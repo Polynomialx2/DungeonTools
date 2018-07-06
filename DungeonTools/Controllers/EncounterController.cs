@@ -6,6 +6,7 @@ using Foundation;
 using AppKit;
 using DungeonTools.Models;
 using DungeonTools.Controllers;
+using System.Linq;
 
 namespace DungeonTools
 {
@@ -102,6 +103,12 @@ namespace DungeonTools
 
         private void addMonstersToEncounter(Monster monster, bool reloadFlag)
         {
+            int currentMonsterTypeCount = monsterDataSource.MonsterEntries.Count(m => m.Type.Equals(monster.Type));
+            // Only rename generic monsters
+            if (monster.Name.Equals(monster.Type))
+            {
+                monster.Name = $"{monster.Type} {currentMonsterTypeCount + 1}";
+            }
             monsterDataSource.MonsterEntries.Add(monster);
             if (reloadFlag)
             {
