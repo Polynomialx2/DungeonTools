@@ -51,11 +51,19 @@ namespace DungeonTools.Controllers
 
         partial void OnSaveButtonClicked(NSObject sender)
         {
-            if (_addNewCharacterHandler != null)
+            if (_addNewCharacterHandler != null && InputsAreValid())
             {
                 _addNewCharacterHandler(new PlayerCharacter(CharacterName.StringValue, RolledInitiative.IntValue, PlayerName.StringValue));
                 DismissViewController(this);
             }
+        }
+
+        private bool InputsAreValid()
+        {
+            bool characterNameIsValid = !CharacterName.StringValue.Equals(String.Empty);
+            bool initiativeIsValid = !RolledInitiative.StringValue.Equals(String.Empty);
+            bool playerNameIsValid = !PlayerName.StringValue.Equals(String.Empty);
+            return characterNameIsValid && initiativeIsValid && playerNameIsValid;
         }
     }
 }
