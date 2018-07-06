@@ -4,12 +4,14 @@ using System.Linq;
 using Foundation;
 using AppKit;
 using DungeonTools.Models;
+using DungeonTools.Helpers;
 
 namespace DungeonTools.Controllers
 {
-    public partial class AddMonsterViewController : AppKit.NSViewController
+    public partial class AddMonsterViewController : NSViewController, INSTextFieldDelegate
     {
         private AddNewMonsterHandler _addNewMonsterHandler;
+        private bool diceStringIsValid = false;
         public AddNewMonsterHandler AddNewMonsterHandler { get => _addNewMonsterHandler; set => _addNewMonsterHandler = value; }
 
         #region Constructors
@@ -49,15 +51,24 @@ namespace DungeonTools.Controllers
             }
         }
 
+        public override void ViewDidLoad()
+        {
+            base.ViewDidLoad();
+            MonsterHitDice.Delegate = this;
+            InvalidDiceStringField.Hidden = true;
+        }
+
+        // Add the monsters to the list
+
         partial void OnSaveButtonClicked(NSObject sender)
         {
-            if (_addNewMonsterHandler != null)
+            if (_addNewMonsterHandler != null && InputsAreValid())
             {
                 int count = MonsterCount.IntValue;
                 bool reloadData = false;
                 for (int i = 0; i < MonsterCount.IntValue; i++)
                 {
-                    if (i == count - 1)
+                    if (i == (count - 1))
                     {
                         reloadData = true;
                     }
@@ -68,6 +79,34 @@ namespace DungeonTools.Controllers
                 }
                 DismissViewController(this);
             }
+        }
+
+        // Validate the dice string as it's entered
+
+        [Export("controlTextDidChange:")]
+        public void Changed(NSNotification notification)
+        {
+            string diceString = MonsterHitDice.StringValue;
+            if (RollDice.ValidateDiceString(diceString))
+            {
+                diceStringIsValid = true;
+                InvalidDiceStringField.Hidden = true;
+            }
+            else
+            {
+                diceStringIsValid = false;
+                InvalidDiceStringField.Hidden = false;
+            }
+        }
+
+        // Validate the inputs. 
+
+        private bool InputsAreValid()
+        {
+            bool monsterTypeValid = !MonsterType.StringValue.Equals(String.Empty);
+            bool monsterCountValid = !MonsterCount.StringValue.Equals(String.Empty);
+            bool monsterInitiativeValid = !MonsterInitiative.StringValue.Equals(String.Empty);
+            return diceStringIsValid && monsterTypeValid && monsterCountValid && monsterInitiativeValid;
         }
     }
 }

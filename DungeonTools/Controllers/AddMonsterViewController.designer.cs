@@ -13,6 +13,9 @@ namespace DungeonTools.Controllers
 	partial class AddMonsterViewController
 	{
 		[Outlet]
+		AppKit.NSTextField InvalidDiceStringField { get; set; }
+
+		[Outlet]
 		AppKit.NSTextField MonsterCount { get; set; }
 
 		[Outlet]
@@ -37,6 +40,11 @@ namespace DungeonTools.Controllers
 				MonsterCount = null;
 			}
 
+			if (MonsterHitDice != null) {
+				MonsterHitDice.Dispose ();
+				MonsterHitDice = null;
+			}
+
 			if (MonsterInitiative != null) {
 				MonsterInitiative.Dispose ();
 				MonsterInitiative = null;
@@ -47,9 +55,9 @@ namespace DungeonTools.Controllers
 				MonsterType = null;
 			}
 
-			if (MonsterHitDice != null) {
-				MonsterHitDice.Dispose ();
-				MonsterHitDice = null;
+			if (InvalidDiceStringField != null) {
+				InvalidDiceStringField.Dispose ();
+				InvalidDiceStringField = null;
 			}
 		}
 	}
