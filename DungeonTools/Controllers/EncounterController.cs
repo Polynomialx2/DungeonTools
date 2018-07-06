@@ -95,6 +95,12 @@ namespace DungeonTools
             EndEncounterButton.Enabled = false;
         }
 
+        partial void OnClearMonstersButtonClicked(NSObject sender)
+        {
+            monsterDataSource.MonsterEntries.Clear();
+            MonsterTable.ReloadData();
+        }
+
         private void addCharacterToParty(PlayerCharacter character)
         {
             characterDataSource.CharacterEntries.Add(character);

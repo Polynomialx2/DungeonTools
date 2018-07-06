@@ -33,6 +33,9 @@ namespace DungeonTools
 		[Action ("OnAddPlayerButtonClicked:")]
 		partial void OnAddPlayerButtonClicked (Foundation.NSObject sender);
 
+		[Action ("OnClearMonstersButtonClicked:")]
+		partial void OnClearMonstersButtonClicked (Foundation.NSObject sender);
+
 		[Action ("OnEndEncounterButtonClicked:")]
 		partial void OnEndEncounterButtonClicked (Foundation.NSObject sender);
 
@@ -50,19 +53,14 @@ namespace DungeonTools
 		
 		void ReleaseDesignerOutlets ()
 		{
-			if (InitiativeTable != null) {
-				InitiativeTable.Dispose ();
-				InitiativeTable = null;
-			}
-
 			if (EndEncounterButton != null) {
 				EndEncounterButton.Dispose ();
 				EndEncounterButton = null;
 			}
 
-			if (StartEncounterButton != null) {
-				StartEncounterButton.Dispose ();
-				StartEncounterButton = null;
+			if (InitiativeTable != null) {
+				InitiativeTable.Dispose ();
+				InitiativeTable = null;
 			}
 
 			if (MonsterTable != null) {
@@ -73,6 +71,11 @@ namespace DungeonTools
 			if (PartyTable != null) {
 				PartyTable.Dispose ();
 				PartyTable = null;
+			}
+
+			if (StartEncounterButton != null) {
+				StartEncounterButton.Dispose ();
+				StartEncounterButton = null;
 			}
 		}
 	}
