@@ -100,7 +100,6 @@
       <DependentUpon>EncounterController.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\CharacterInitiativeListDataSource.cs" />
-    <Compile Include="Models\CharacterEntriesDelegate.cs" />
     <Compile Include="Controllers\AddCharacterViewController.cs" />
     <Compile Include="Controllers\AddCharacterViewController.designer.cs">
       <DependentUpon>AddCharacterViewController.cs</DependentUpon>
@@ -109,7 +108,6 @@
     <Compile Include="Views\AddCharacterView.designer.cs">
       <DependentUpon>AddCharacterView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Models\MonsterEntriesDelegate.cs" />
     <Compile Include="Models\MonsterInitiativeListDataSource.cs" />
     <Compile Include="Controllers\AddMonsterViewController.cs" />
     <Compile Include="Controllers\AddMonsterViewController.designer.cs">
@@ -120,7 +118,9 @@
       <DependentUpon>AddMonsterView.cs</DependentUpon>
     </Compile>
     <Compile Include="Models\InitiativeOrderListDataSource.cs" />
-    <Compile Include="Models\CreatureEntriesDelegate.cs" />
+    <Compile Include="Controllers\CharacterEntriesDelegate.cs" />
+    <Compile Include="Controllers\CreatureEntriesDelegate.cs" />
+    <Compile Include="Controllers\MonsterEntriesDelegate.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

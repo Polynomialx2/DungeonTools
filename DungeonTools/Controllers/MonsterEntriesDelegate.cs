@@ -1,8 +1,9 @@
 ﻿using System;
 using AppKit;
 using DungeonTools.Helpers;
+using DungeonTools.Models;
 
-namespace DungeonTools.Models
+namespace DungeonTools.Controllers
 {
     public class MonsterEntriesDelegate : NSTableViewDelegate
     {
