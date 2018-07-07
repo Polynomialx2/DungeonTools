@@ -26,8 +26,8 @@ namespace DungeonTools.Models
                 view.Identifier = CellIdentifier;
                 view.BackgroundColor = NSColor.Clear;
                 view.Bordered = false;
-                view.Selectable = false;
-                view.Editable = false;
+                view.Selectable = true;
+                view.Editable = true;
             }
 
             // Set up view based on the column and row
@@ -35,11 +35,13 @@ namespace DungeonTools.Models
             {
                 case DungeonToolsConstants.ENCOUNTER_INITIATIVE_ORDER_NAME:
                     view.StringValue = DataSource.CreatureEntries[(int)row].Name;
+                    view.Editable = true;
                     break;
                 case DungeonToolsConstants.ENCOUNTER_INITIATIVE_ORDER_INITIATIVE:
                     view.StringValue = DataSource.CreatureEntries[(int)row].Initiative.ToString();
                     break;
                 case DungeonToolsConstants.ENCOUNTER_INITIATIVE_HIT_POINTS:
+                    view.Editable = true;
                     var creature = DataSource.CreatureEntries[(int)row];
                     if (creature is Monster)
                     {
