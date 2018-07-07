@@ -7,6 +7,7 @@ using AppKit;
 using DungeonTools.Models;
 using DungeonTools.Controllers;
 using System.Linq;
+using DungeonTools.Helpers;
 
 namespace DungeonTools
 {
@@ -34,6 +35,7 @@ namespace DungeonTools
             MonsterTable.Delegate = new MonsterEntriesDelegate(monsterDataSource);
             InitiativeTable.DataSource = initiativeOrderDataSource;
             InitiativeTable.Delegate = new CreatureEntriesDelegate(initiativeOrderDataSource);
+            InitiativeTable.RegisterForDraggedTypes(new string[] { DungeonToolsConstants.ECOUNTER_INITIATIVE_DRAG_DROP_TYPE });
         }
 
         public override void PrepareForSegue(NSStoryboardSegue segue, NSObject sender)
