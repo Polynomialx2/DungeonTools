@@ -40,6 +40,7 @@ namespace DungeonTools.Helpers
         public const string ENCOUNTER_INITIATIVE_ORDER_NAME = "Creature Name";
         public const string ENCOUNTER_INITIATIVE_ORDER_INITIATIVE = "Initiative";
         public const string ENCOUNTER_INITIATIVE_HIT_POINTS = "HitPoints";
+        public const string ECOUNTER_INITIATIVE_DRAG_DROP_TYPE = "InitiativeDragDropType";
 
     }
 }
