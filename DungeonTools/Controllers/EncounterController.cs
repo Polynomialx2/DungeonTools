@@ -103,6 +103,18 @@ namespace DungeonTools
             MonsterTable.ReloadData();
         }
 
+        partial void OnEnterInHPField(NSObject sender)
+        {
+            int currentRow = (int)InitiativeTable.SelectedRow;
+            string newValue = (sender as NSTextField).StringValue;
+            Creature creature = initiativeOrderDataSource.CreatureEntries[currentRow];
+            if (creature is Monster)
+            {
+                ((Monster)creature).HitPoints = Convert.ToInt32(newValue);
+                InitiativeTable.ReloadData();
+            }
+        }
+
         private void addCharacterToParty(PlayerCharacter character)
         {
             characterDataSource.CharacterEntries.Add(character);

@@ -1168,6 +1168,9 @@
                                                                         <font key="font" metaFont="system"/>
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                                                        <connections>
+                                                                            <action selector="OnEnterInHPField:" target="rms-68-9V7" id="Dr6-qV-uT4"/>
+                                                                        </connections>
                                                                     </textFieldCell>
                                                                 </textField>
                                                             </subviews>
@@ -1176,9 +1179,6 @@
                                                                 <constraint firstItem="O5h-Aw-JDF" firstAttribute="leading" secondItem="BCX-96-7Mj" secondAttribute="leading" constant="2" id="gzp-03-e3M"/>
                                                                 <constraint firstItem="O5h-Aw-JDF" firstAttribute="centerY" secondItem="BCX-96-7Mj" secondAttribute="centerY" id="xhx-2c-6eH"/>
                                                             </constraints>
-                                                            <connections>
-                                                                <outlet property="textField" destination="O5h-Aw-JDF" id="ZKa-9o-Bhm"/>
-                                                            </connections>
                                                         </tableCellView>
                                                     </prototypeCellViews>
                                                 </tableColumn>

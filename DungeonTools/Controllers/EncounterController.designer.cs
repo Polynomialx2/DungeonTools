@@ -39,6 +39,9 @@ namespace DungeonTools
 		[Action ("OnEndEncounterButtonClicked:")]
 		partial void OnEndEncounterButtonClicked (Foundation.NSObject sender);
 
+		[Action ("OnEnterInHPField:")]
+		partial void OnEnterInHPField (Foundation.NSObject sender);
+
 		[Action ("OnRemoveButtonClicked:")]
 		partial void OnRemoveButtonClicked (Foundation.NSObject sender);
 
