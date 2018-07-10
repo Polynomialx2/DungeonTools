@@ -2,6 +2,7 @@
 using AppKit;
 using DungeonTools.Helpers;
 using DungeonTools.Models;
+using Foundation;
 
 namespace DungeonTools.Controllers
 {
@@ -55,6 +56,12 @@ namespace DungeonTools.Controllers
                     break;
             }
             return view;
+        }
+
+        [Export("objectDidEndEditing:")]
+        public override void ObjectDidEndEditing(NSObject editor)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

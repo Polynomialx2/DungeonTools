@@ -121,6 +121,7 @@
     <Compile Include="Controllers\CharacterEntriesDelegate.cs" />
     <Compile Include="Controllers\CreatureEntriesDelegate.cs" />
     <Compile Include="Controllers\MonsterEntriesDelegate.cs" />
+    <Compile Include="Views\HitPointsCellView.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Main.storyboard" />

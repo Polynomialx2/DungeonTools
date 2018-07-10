@@ -36,6 +36,7 @@ namespace DungeonTools
             InitiativeTable.DataSource = initiativeOrderDataSource;
             InitiativeTable.Delegate = new CreatureEntriesDelegate(initiativeOrderDataSource);
             InitiativeTable.RegisterForDraggedTypes(new string[] { DungeonToolsConstants.ECOUNTER_INITIATIVE_DRAG_DROP_TYPE });
+            InitiativeTable.Target = this;
         }
 
         public override void PrepareForSegue(NSStoryboardSegue segue, NSObject sender)

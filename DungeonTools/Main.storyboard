@@ -1169,7 +1169,7 @@
                                                                         <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                         <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                                                         <connections>
-                                                                            <action selector="OnEnterInHPField:" target="rms-68-9V7" id="Dr6-qV-uT4"/>
+                                                                            <action selector="OnEnterInHPField:" target="rms-68-9V7" id="MNZ-XM-Qmh"/>
                                                                         </connections>
                                                                     </textFieldCell>
                                                                 </textField>
